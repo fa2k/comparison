@@ -1,0 +1,4 @@
+Module	Section	Sample Name	Source
+FastQC	all_sections	Swift2S-100ng-1.duplicates.nonSQ	/data/runScratch.boston/analysis/projects/Project_Ribarska-DNAlibs-2019-04-01/restriction_enzyme/Swift2S-100ng-1.duplicates.nonSQ_fastqc.zip
+FastQC	all_sections	Quanta-100ng-4	/data/runScratch.boston/analysis/projects/Project_Ribarska-DNAlibs-2019-04-01/restriction_enzyme/Quanta-100ng-4_fastqc.zip
+FastQC	all_sections	Quanta-100ng-4.duplicates.nonSQ	/data/runScratch.boston/analysis/projects/Project_Ribarska-DNAlibs-2019-04-01/restriction_enzyme/Quanta-100ng-4.duplicates.nonSQ_fastqc.zip

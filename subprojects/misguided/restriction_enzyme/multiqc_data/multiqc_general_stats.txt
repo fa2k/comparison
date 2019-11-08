@@ -1,0 +1,4 @@
+Sample	FastQC_percent_duplicates	FastQC_percent_gc	FastQC_avg_sequence_length	FastQC_total_sequences	FastQC_percent_fails
+Quanta-100ng-4	14.0083104521	42.0	149.900017456	194995888.0	25.0
+Quanta-100ng-4.duplicates.nonSQ	1.32025275574	40.0	151.0	4383396.0	25.0
+Swift2S-100ng-1.duplicates.nonSQ	2.36300526047	40.0	151.0	8966100.0	25.0

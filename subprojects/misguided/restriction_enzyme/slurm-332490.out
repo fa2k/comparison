@@ -1,0 +1,26 @@
+Java memory size is set to 1200M
+Launching application...
+
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1024m; support was removed in 8.0
+QualiMap v.2.2.1
+Built on 2016-10-03 18:14
+
+Selected tool: bamqc
+Available memory (Mb): 32
+Max memory (Mb): 1118
+Thu Nov 07 16:45:10 CET 2019		WARNING	Output folder already exists, the results will be saved there
+
+Starting bam qc....
+Loading sam header...
+Loading locator...
+Loading reference...
+Number of windows: 400, effective number of windows: 594
+Chunk of reads size: 1000
+Number of threads: 8
+Processed 59 out of 594 windows...
+Processed 118 out of 594 windows...
+Processed 177 out of 594 windows...
+
+WARNING: out of memory!
+Qualimap allows to set RAM size using special argument: --java-mem-size
+Check more details using --help command or read the manual.
