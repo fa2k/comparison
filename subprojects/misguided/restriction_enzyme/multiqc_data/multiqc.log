@@ -1,0 +1,78 @@
+[2019-11-07 13:58:50,547] multiqc                                            [DEBUG  ]  No MultiQC config found: /usr/lib/python2.7/site-packages/multiqc-1.2-py2.7.egg/multiqc_config.yaml
+[2019-11-07 13:58:50,548] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/paalmbj/.multiqc_config.yaml
+[2019-11-07 13:58:50,548] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2019-11-07 13:58:50,548] multiqc                                            [DEBUG  ]  Command used: /usr/bin/multiqc .
+[2019-11-07 13:58:50,555] multiqc                                            [DEBUG  ]  Could not connect to multiqc.info for version check: <urlopen error [Errno -2] Name or service not known>
+[2019-11-07 13:58:50,555] multiqc                                            [INFO   ]  This is MultiQC v1.2
+[2019-11-07 13:58:50,555] multiqc                                            [DEBUG  ]  Command     : /usr/bin/multiqc .
+[2019-11-07 13:58:50,555] multiqc                                            [DEBUG  ]  Working dir : /data/runScratch.boston/analysis/projects/Project_Ribarska-DNAlibs-2019-04-01/restriction_enzyme
+[2019-11-07 13:58:50,556] multiqc                                            [INFO   ]  Template    : default
+[2019-11-07 13:58:50,556] multiqc                                            [INFO   ]  Searching '.'
+[2019-11-07 13:58:50,557] multiqc                                            [DEBUG  ]  Analysing modules: afterqc, custom_content, conpair, peddy, methylQA, qualimap, preseq, quast, qorts, rna_seqc, rseqc, busco, goleft_indexcov, disambiguate, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, picard, prokka, samblaster, samtools, bamtools, jellyfish, vcftools, bismark, hicup, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, leehom, adapterRemoval, cutadapt, flexbar, trimmomatic, skewer, sortmerna, biobloomtools, fastq_screen, fastqc, clusterflow, bcl2fastq
+[2019-11-07 13:58:50,557] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpr5EU1o
+[2019-11-07 13:58:50,670] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Quanta-100ng-4.duplicates.nonSQ.bam
+[2019-11-07 13:58:50,671] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Swift2S-100ng-1.bam
+[2019-11-07 13:58:50,671] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Swift2S-100ng-1.duplicates.nonSQ_fastqc.html
+[2019-11-07 13:58:50,672] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Quanta-100ng-4.duplicates.nonSQ_fastqc.html
+[2019-11-07 13:58:50,672] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Quanta-100ng-4.bam
+[2019-11-07 13:58:50,672] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Quanta-100ng-4_fastqc.html
+[2019-11-07 13:58:50,674] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Swift2S-100ng-1.duplicates.nonSQ.bam
+[2019-11-07 13:58:51,218] multiqc.modules.afterqc.afterqc                    [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,226] multiqc.modules.custom_content.custom_content      [DEBUG  ]  No custom content found
+[2019-11-07 13:58:51,233] multiqc.modules.conpair.conpair                    [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,241] multiqc.modules.peddy.peddy                        [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,250] multiqc.modules.methylQA.methylQA                  [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,258] multiqc.modules.qualimap.QM_BamQC                  [DEBUG  ]  Using default Qualimap thresholds: 1, 5, 10, 30, 50
+[2019-11-07 13:58:51,258] multiqc.modules.qualimap.qualimap                  [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,265] multiqc.modules.preseq.preseq                      [DEBUG  ]  Could not find any preseq data in ('.',)
+[2019-11-07 13:58:51,273] multiqc.modules.quast.quast                        [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,280] multiqc.modules.qorts.qorts                        [DEBUG  ]  Could not find any QoRTs data in ('.',)
+[2019-11-07 13:58:51,287] multiqc.modules.rna_seqc.rna_seqc                  [DEBUG  ]  Could not find any RNA-SeQC data in ('.',)
+[2019-11-07 13:58:51,296] multiqc.modules.rseqc.rseqc                        [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,304] multiqc.modules.busco.busco                        [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,311] multiqc.modules.goleft_indexcov.goleft_indexcov    [DEBUG  ]  Did not find goleft indexcov outputs in ('.',)
+[2019-11-07 13:58:51,318] multiqc.modules.disambiguate.disambiguate          [DEBUG  ]  Could not find any data in ('.',)
+[2019-11-07 13:58:51,325] multiqc.modules.homer.homer                        [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,332] multiqc.modules.macs2.macs2                        [DEBUG  ]  Could not find any MACS2 data in ('.',)
+[2019-11-07 13:58:51,339] multiqc.modules.theta2.theta2                      [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,346] multiqc.modules.snpeff.snpeff                      [DEBUG  ]  Could not find any data in ('.',)
+[2019-11-07 13:58:51,354] multiqc.modules.gatk.gatk                          [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,361] multiqc.modules.htseq.htseq                        [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,368] multiqc.modules.bcftools.bcftools                  [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,376] multiqc.modules.featureCounts.feature_counts       [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,386] multiqc.modules.picard.picard                      [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,393] multiqc.modules.prokka.prokka                      [DEBUG  ]  Could not find any Prokka data in ('.',)
+[2019-11-07 13:58:51,400] multiqc.modules.samblaster.samblaster              [DEBUG  ]  Could not find any data in ('.',)
+[2019-11-07 13:58:51,408] multiqc.modules.samtools.samtools                  [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,416] multiqc.modules.bamtools.bamtools                  [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,423] multiqc.modules.jellyfish.jellyfish                [DEBUG  ]  Could not find any data in ('.',)
+[2019-11-07 13:58:51,430] multiqc.modules.vcftools.vcftools                  [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,438] multiqc.modules.bismark.bismark                    [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,445] multiqc.modules.hicup.hicup                        [DEBUG  ]  Could not find any HiCUP data in ('.',)
+[2019-11-07 13:58:51,452] multiqc.modules.salmon.salmon                      [DEBUG  ]  Could not find any Salmon data in ('.',)
+[2019-11-07 13:58:51,459] multiqc.modules.kallisto.kallisto                  [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,468] multiqc.modules.slamdunk.slamdunk                  [DEBUG  ]  No slamdunk reports found.
+[2019-11-07 13:58:51,475] multiqc.modules.star.star                          [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,482] multiqc.modules.hisat2.hisat2                      [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,490] multiqc.modules.tophat.tophat                      [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,497] multiqc.modules.bowtie2.bowtie2                    [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,504] multiqc.modules.bowtie1.bowtie1                    [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,512] multiqc.modules.leehom.leehom                      [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,519] multiqc.modules.adapterRemoval.adapterRemoval      [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,526] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,533] multiqc.modules.flexbar.flexbar                    [DEBUG  ]  Could not find any Flexbar data in ('.',)
+[2019-11-07 13:58:51,540] multiqc.modules.trimmomatic.trimmomatic            [DEBUG  ]  Could not find any Trimmomatic data in ('.',)
+[2019-11-07 13:58:51,548] multiqc.modules.skewer.skewer                      [DEBUG  ]  Could not find any data in ('.',)
+[2019-11-07 13:58:51,555] multiqc.modules.sortmerna.sortmerna                [DEBUG  ]  Could not find any SortMeRNA data in ('.',)
+[2019-11-07 13:58:51,562] multiqc.modules.biobloomtools.biobloomtools        [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:51,569] multiqc.modules.fastq_screen.fastq_screen          [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:52,322] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 3 reports
+[2019-11-07 13:58:53,452] multiqc.modules.clusterflow.clusterflow            [DEBUG  ]  Could not find any reports in ('.',)
+[2019-11-07 13:58:53,463] multiqc.modules.bcl2fastq.bcl2fastq                [DEBUG  ]  Could not find any bcl2fastq data in ('.',)
+[2019-11-07 13:58:53,480] multiqc                                            [INFO   ]  Compressing plot data
+[2019-11-07 13:58:54,148] multiqc                                            [INFO   ]  Report      : multiqc_report.html
+[2019-11-07 13:58:54,149] multiqc                                            [INFO   ]  Data        : multiqc_data
+[2019-11-07 13:58:54,152] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpr5EU1o/multiqc_data/multiqc_fastqc.txt' to '/data/runScratch.boston/analysis/projects/Project_Ribarska-DNAlibs-2019-04-01/restriction_enzyme/multiqc_data'
+[2019-11-07 13:58:54,161] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpr5EU1o/multiqc_data/multiqc_general_stats.txt' to '/data/runScratch.boston/analysis/projects/Project_Ribarska-DNAlibs-2019-04-01/restriction_enzyme/multiqc_data'
+[2019-11-07 13:58:54,169] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpr5EU1o/multiqc_data/multiqc_sources.txt' to '/data/runScratch.boston/analysis/projects/Project_Ribarska-DNAlibs-2019-04-01/restriction_enzyme/multiqc_data'
+[2019-11-07 13:58:54,571] multiqc                                            [INFO   ]  MultiQC complete
