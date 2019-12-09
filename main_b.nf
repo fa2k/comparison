@@ -4,12 +4,17 @@ samples1 = Channel
     .splitCsv(header:true, sep:"\t")
     .map{ row -> tuple(row.sampleName, file(row.fileBAM), row.downSampleFactor) }
 
-samples2 = Channel
-    .fromPath('downsample_factors_dd_fix.txt')
-    .splitCsv(header:true, sep:"\t")
-    .map{ row -> tuple(row.sampleName, file(row.fileBAM), row.downSampleFactor) }
+## Deduplicated data -- this section is disabled because it is not used at the moment.
+## Instead: process samples1 as samples_ch
 
-samples1.concat(samples2).set { samples_ch }
+samples1.set { samples_ch }
+
+# samples2 = Channel
+#     .fromPath('downsample_factors_dd_fix.txt')
+#     .splitCsv(header:true, sep:"\t")
+#     .map{ row -> tuple(row.sampleName, file(row.fileBAM), row.downSampleFactor) }
+# 
+# samples1.concat(samples2).set { samples_ch }
 
 
 process downsample {

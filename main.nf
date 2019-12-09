@@ -38,8 +38,10 @@ process bwa_mem {
     set sampleId, file("${sampleId}_BWAmem.sh") into BWAmem_sh
    
     script:
+    samtools_mem_mb = Math.max(500, ((task.memory.mega - 8000) / task.cpus) as int)
     """
-    bwa mem -t $params.cpu -R ${readGroup} ${genome} ${read1} ${read2} | samtools sort -m 4G -@ $params.cpu -T ./${sampleId}_tmp -O bam -o ${sampleId}.sorted.bam -
+    bwa mem -t $task.cpus -R ${readGroup} ${genome} ${read1} ${read2} | \
+                samtools sort -m ${samtools_mem_mb}M -@ $task.cpus -T ./${sampleId}_tmp -O bam -o ${sampleId}.sorted.bam -
     cp .command.log ${sampleId}_BWAmem.log
     cp .command.sh ${sampleId}_BWAmem.sh
     """
@@ -63,10 +65,10 @@ process piccard {
     script:
     """
     ln -s  ${params.refFolder}${params.genomeVersion}/${params.genomeName.replaceAll(/\.fn?a$/, "")}/${params.genomeName.replaceAll(/\.fn?a$/, "*")} .
-    ${params.javaLocation} -Djava.io.tmpdir='.' -XX:ParallelGCThreads=${params.cpu} -jar ${params.picardLocation} MarkDuplicates INPUT=${sampleId_BWA_bam.join(' INPUT=')}  OUTPUT=${sampleName}.bam METRICS_FILE=${sampleName}.MarkDuplicatesMetrics.txt TAGGING_POLICY=OpticalOnly OPTICAL_DUPLICATE_PIXEL_DISTANCE=2500 
-    ${params.javaLocation} -Djava.io.tmpdir='.' -XX:ParallelGCThreads=${params.cpu} -jar ${params.picardLocation} CollectAlignmentSummaryMetrics REFERENCE_SEQUENCE=${params.genomeName} INPUT=${sampleName}.bam OUTPUT=${sampleName}.AlignmentSummaryMetrics.txt
-    ${params.javaLocation} -Djava.io.tmpdir='.' -XX:ParallelGCThreads=${params.cpu} -jar ${params.picardLocation} CollectWgsMetrics REFERENCE_SEQUENCE=${params.genomeName} INPUT=${sampleName}.bam OUTPUT=${sampleName}.WgsMetrics.txt 
-    ${params.javaLocation} -Djava.io.tmpdir='.' -XX:ParallelGCThreads=${params.cpu} -jar ${params.picardLocation} CollectInsertSizeMetrics INPUT=${sampleName}.bam OUTPUT=${sampleName}.InsertSizeMetrics.txt HISTOGRAM_FILE=${sampleName}.InsertSizeMetrics-Histogram.pdf 
+    ${params.javaLocation} -Djava.io.tmpdir='.' -XX:ParallelGCThreads=${task.cpus} -jar ${params.picardLocation} MarkDuplicates INPUT=${sampleId_BWA_bam.join(' INPUT=')}  OUTPUT=${sampleName}.bam METRICS_FILE=${sampleName}.MarkDuplicatesMetrics.txt TAGGING_POLICY=OpticalOnly OPTICAL_DUPLICATE_PIXEL_DISTANCE=2500 
+    ${params.javaLocation} -Djava.io.tmpdir='.' -XX:ParallelGCThreads=${task.cpus} -jar ${params.picardLocation} CollectAlignmentSummaryMetrics REFERENCE_SEQUENCE=${params.genomeName} INPUT=${sampleName}.bam OUTPUT=${sampleName}.AlignmentSummaryMetrics.txt
+    ${params.javaLocation} -Djava.io.tmpdir='.' -XX:ParallelGCThreads=${task.cpus} -jar ${params.picardLocation} CollectWgsMetrics REFERENCE_SEQUENCE=${params.genomeName} INPUT=${sampleName}.bam OUTPUT=${sampleName}.WgsMetrics.txt 
+    ${params.javaLocation} -Djava.io.tmpdir='.' -XX:ParallelGCThreads=${task.cpus} -jar ${params.picardLocation} CollectInsertSizeMetrics INPUT=${sampleName}.bam OUTPUT=${sampleName}.InsertSizeMetrics.txt HISTOGRAM_FILE=${sampleName}.InsertSizeMetrics-Histogram.pdf 
     cp .command.log ${sampleName}_picard.log
     cp .command.sh ${sampleName}_picard.sh
     """
@@ -76,6 +78,7 @@ process piccard {
 // println "-I ${sampleId_BWA_bam.join(' -I ')}"
 
 
+// NOTE: Deduplicated file will probably not be used for analysis.
 process dedup {
     tag "$sampleName"
     publishDir params.dedupFolder, mode: 'copy', overwrite: false
