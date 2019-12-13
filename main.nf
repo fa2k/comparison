@@ -59,6 +59,7 @@ process piccard {
     output:
     set sampleName, file("${sampleName}.bam") into bam_for_qualimap
     set sampleName, file("${sampleName}.bam") into bam_for_deduplicate
+    set sampleName, file("${sampleName}.bam") into original_bam_for_counting
     set file("${sampleName}.*Metrics*"), file("${sampleName}_picard.log"), file("${sampleName}_picard.sh")
  
     
@@ -121,3 +122,23 @@ process readCount {
 }
 
 
+
+process readCountNonDedup {
+    tag "$sampleName"
+    publishDir params.picardFolder, mode: 'copy', overwrite: true
+
+    echo true
+
+    input:
+    set sampleName, file(bam) from original_bam_for_counting
+
+    output:
+    file "${sampleName}.readCount.txt"
+
+    script:
+    """
+    samtools view -c -F 0x900 $bam > ${sampleName}.readCount.txt
+    cp .command.log ${sampleName}_dedup.log
+    cp .command.sh ${sampleName}_dedup.sh
+    """
+}
