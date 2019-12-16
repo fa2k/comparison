@@ -1,6 +1,6 @@
 
 Channel
-    .fromPath('downsample_factors_fix.txt')
+    .fromPath('downsample_factors.txt')
     .splitCsv(header:true, sep:"\t")
     .map{ row -> tuple(
                     row.sampleName,
