@@ -1,0 +1,750 @@
+[2019-07-01 13:56:00,566] multiqc                                            [DEBUG  ]  No MultiQC config found: /Users/paalmbj/anaconda/lib/python3.5/site-packages/multiqc-1.7-py3.5.egg/multiqc_config.yaml
+[2019-07-01 13:56:00,566] multiqc                                            [DEBUG  ]  No MultiQC config found: /Users/paalmbj/.multiqc_config.yaml
+[2019-07-01 13:56:00,584] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2019-07-01 13:56:00,584] multiqc                                            [DEBUG  ]  Command used: /Users/paalmbj/anaconda/bin/multiqc ../../../../demultiplexed/completed/1906/190606_E00426_0063_AHYK7TCCXY/Data/Intensities/BaseCalls/QualityControl/Ribarska-DNAlibs-2019-04-01 ../../../../demultiplexed/completed/1906/190613_E00426_0064_AHYKCHCCXY/Data/Intensities/BaseCalls/QualityControl/Ribarska-DNAlibs-2019-04-01 ../../../../demultiplexed/completed/1906/190626_E00396_0021_BHYNTHCCXY/Data/Intensities/BaseCalls/QualityControl/Ribarska-DNAlibs-2019-04-01
+[2019-07-01 13:56:00,597] multiqc                                            [DEBUG  ]  Could not connect to multiqc.info for version check: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[2019-07-01 13:56:00,597] multiqc                                            [INFO   ]  This is MultiQC v1.7
+[2019-07-01 13:56:00,598] multiqc                                            [DEBUG  ]  Command     : /Users/paalmbj/anaconda/bin/multiqc ../../../../demultiplexed/completed/1906/190606_E00426_0063_AHYK7TCCXY/Data/Intensities/BaseCalls/QualityControl/Ribarska-DNAlibs-2019-04-01 ../../../../demultiplexed/completed/1906/190613_E00426_0064_AHYKCHCCXY/Data/Intensities/BaseCalls/QualityControl/Ribarska-DNAlibs-2019-04-01 ../../../../demultiplexed/completed/1906/190626_E00396_0021_BHYNTHCCXY/Data/Intensities/BaseCalls/QualityControl/Ribarska-DNAlibs-2019-04-01
+[2019-07-01 13:56:00,598] multiqc                                            [DEBUG  ]  Working dir : /Volumes/runScratch/analysis/projects/Ribarska-DNAlibs-2019-04-01/01_data_qc
+[2019-07-01 13:56:00,598] multiqc                                            [INFO   ]  Template    : default
+[2019-07-01 13:56:00,598] multiqc                                            [INFO   ]  Searching '../../../../demultiplexed/completed/1906/190606_E00426_0063_AHYK7TCCXY/Data/Intensities/BaseCalls/QualityControl/Ribarska-DNAlibs-2019-04-01'
+[2019-07-01 13:56:00,598] multiqc                                            [INFO   ]  Searching '../../../../demultiplexed/completed/1906/190613_E00426_0064_AHYKCHCCXY/Data/Intensities/BaseCalls/QualityControl/Ribarska-DNAlibs-2019-04-01'
+[2019-07-01 13:56:00,599] multiqc                                            [INFO   ]  Searching '../../../../demultiplexed/completed/1906/190626_E00396_0021_BHYNTHCCXY/Data/Intensities/BaseCalls/QualityControl/Ribarska-DNAlibs-2019-04-01'
+[2019-07-01 13:56:00,600] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, conpair, peddy, methylQA, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, dedup, damageprofiler, picard, prokka, samblaster, samtools, bamtools, jellyfish, vcftools, longranger, stacks, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, trimmomatic, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, minionqc, clusterflow, bcl2fastq, interop, flash
+[2019-07-01 13:56:00,600] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /var/folders/hs/s6yv0thn5lz086vmzz8n095m0000gn/T/tmpxds9k70x
+[2019-07-01 13:56:00,645] multiqc                                            [DEBUG  ]  Ignoring directory as matched fn_ignore_dirs: ../../../../demultiplexed/completed/1906/190606_E00426_0063_AHYK7TCCXY/Data/Intensities/BaseCalls/QualityControl/Ribarska-DNAlibs-2019-04-01/multiqc_data
+[2019-07-01 13:56:17,315] multiqc                                            [DEBUG  ]  Ignoring directory as matched fn_ignore_dirs: ../../../../demultiplexed/completed/1906/190613_E00426_0064_AHYKCHCCXY/Data/Intensities/BaseCalls/QualityControl/Ribarska-DNAlibs-2019-04-01/multiqc_data
+[2019-07-01 13:56:34,430] multiqc                                            [DEBUG  ]  Ignoring directory as matched fn_ignore_dirs: ../../../../demultiplexed/completed/1906/190626_E00396_0021_BHYNTHCCXY/Data/Intensities/BaseCalls/QualityControl/Ribarska-DNAlibs-2019-04-01/multiqc_data
+[2019-07-01 13:56:39,958] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: multiqc_report.html
+[2019-07-01 13:56:45,398] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 10-Kapa-100ng-2_S10_L008_R2_001_fastqc.html
+[2019-07-01 13:56:45,418] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 10-Kapa-100ng-2_S10_L007_R2_001_fastqc.html
+[2019-07-01 13:56:45,438] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 10-Kapa-100ng-2_S10_L005_R2_001_fastqc.html
+[2019-07-01 13:56:48,024] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 10-Kapa-100ng-2_S10_L006_R1_001_fastqc.html
+[2019-07-01 13:56:48,044] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 10-Kapa-100ng-2_S10_L006_R2_001_fastqc.html
+[2019-07-01 13:56:53,129] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 10-Kapa-100ng-2_S10_L008_R1_001_fastqc.html
+[2019-07-01 13:56:55,724] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 10-Kapa-100ng-2_S10_L005_R1_001_fastqc.html
+[2019-07-01 13:56:55,745] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 10-Kapa-100ng-2_S10_L007_R1_001_fastqc.html
+[2019-07-01 13:56:55,784] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:57:01,875] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:57:08,787] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:57:11,549] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:57:17,607] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:57:23,284] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:57:29,578] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:57:35,779] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:57:44,296] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 9-Kapa-100ng-1_S9_L007_R2_001_fastqc.html
+[2019-07-01 13:57:44,316] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 9-Kapa-100ng-1_S9_L006_R1_001_fastqc.html
+[2019-07-01 13:57:44,336] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 9-Kapa-100ng-1_S9_L008_R2_001_fastqc.html
+[2019-07-01 13:57:44,356] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 9-Kapa-100ng-1_S9_L005_R2_001_fastqc.html
+[2019-07-01 13:57:44,377] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 9-Kapa-100ng-1_S9_L007_R1_001_fastqc.html
+[2019-07-01 13:57:48,545] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 9-Kapa-100ng-1_S9_L005_R1_001_fastqc.html
+[2019-07-01 13:57:48,548] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 9-Kapa-100ng-1_S9_L008_R1_001_fastqc.html
+[2019-07-01 13:57:48,826] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 9-Kapa-100ng-1_S9_L006_R2_001_fastqc.html
+[2019-07-01 13:57:48,829] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:57:52,753] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:57:58,885] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:58:06,269] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:58:12,090] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:58:18,472] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:58:25,777] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:58:32,518] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:58:39,541] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 13-Kapa-10ng-1_S13_L007_R2_001_fastqc.html
+[2019-07-01 13:58:42,119] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 13-Kapa-10ng-1_S13_L005_R1_001_fastqc.html
+[2019-07-01 13:58:47,480] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 13-Kapa-10ng-1_S13_L006_R2_001_fastqc.html
+[2019-07-01 13:58:48,668] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 13-Kapa-10ng-1_S13_L008_R2_001_fastqc.html
+[2019-07-01 13:58:48,671] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 13-Kapa-10ng-1_S13_L005_R2_001_fastqc.html
+[2019-07-01 13:58:48,674] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 13-Kapa-10ng-1_S13_L006_R1_001_fastqc.html
+[2019-07-01 13:58:48,677] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 13-Kapa-10ng-1_S13_L008_R1_001_fastqc.html
+[2019-07-01 13:58:48,680] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 13-Kapa-10ng-1_S13_L007_R1_001_fastqc.html
+[2019-07-01 13:58:48,683] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:58:52,508] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:58:59,456] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:59:06,451] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:59:13,492] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:59:20,395] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:59:27,490] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:59:34,400] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:59:41,504] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 15-Kapa-10ng-3_S15_L005_R1_001_fastqc.html
+[2019-07-01 13:59:41,729] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 15-Kapa-10ng-3_S15_L006_R2_001_fastqc.html
+[2019-07-01 13:59:42,068] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 15-Kapa-10ng-3_S15_L008_R1_001_fastqc.html
+[2019-07-01 13:59:42,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 15-Kapa-10ng-3_S15_L008_R2_001_fastqc.html
+[2019-07-01 13:59:42,076] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 15-Kapa-10ng-3_S15_L007_R2_001_fastqc.html
+[2019-07-01 13:59:46,416] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 15-Kapa-10ng-3_S15_L007_R1_001_fastqc.html
+[2019-07-01 13:59:49,032] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 15-Kapa-10ng-3_S15_L006_R1_001_fastqc.html
+[2019-07-01 13:59:49,052] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 15-Kapa-10ng-3_S15_L005_R2_001_fastqc.html
+[2019-07-01 13:59:49,071] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 13:59:56,092] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:00:02,996] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:00:09,867] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:00:16,769] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:00:22,994] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:00:27,607] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:00:34,541] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:00:46,380] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 27-Nextera-100ng-3_S3_L003_R1_001_fastqc.html
+[2019-07-01 14:00:46,400] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 27-Nextera-100ng-3_S3_L001_R2_001_fastqc.html
+[2019-07-01 14:00:46,423] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 27-Nextera-100ng-3_S3_L004_R2_001_fastqc.html
+[2019-07-01 14:00:49,097] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 27-Nextera-100ng-3_S3_L002_R1_001_fastqc.html
+[2019-07-01 14:00:49,117] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 27-Nextera-100ng-3_S3_L003_R2_001_fastqc.html
+[2019-07-01 14:00:49,138] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 27-Nextera-100ng-3_S3_L001_R1_001_fastqc.html
+[2019-07-01 14:00:49,158] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 27-Nextera-100ng-3_S3_L004_R1_001_fastqc.html
+[2019-07-01 14:00:49,178] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 27-Nextera-100ng-3_S3_L002_R2_001_fastqc.html
+[2019-07-01 14:00:51,786] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:00:58,591] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:01:05,551] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:01:09,607] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:01:14,554] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:01:23,441] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:01:30,251] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:01:37,421] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:01:46,690] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 12-Kapa-100ng-4_S12_L007_R2_001_fastqc.html
+[2019-07-01 14:01:46,710] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 12-Kapa-100ng-4_S12_L006_R2_001_fastqc.html
+[2019-07-01 14:01:49,345] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 12-Kapa-100ng-4_S12_L005_R1_001_fastqc.html
+[2019-07-01 14:01:51,895] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 12-Kapa-100ng-4_S12_L008_R2_001_fastqc.html
+[2019-07-01 14:01:54,503] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 12-Kapa-100ng-4_S12_L008_R1_001_fastqc.html
+[2019-07-01 14:01:54,524] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 12-Kapa-100ng-4_S12_L006_R1_001_fastqc.html
+[2019-07-01 14:01:54,544] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 12-Kapa-100ng-4_S12_L005_R2_001_fastqc.html
+[2019-07-01 14:01:54,564] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 12-Kapa-100ng-4_S12_L007_R1_001_fastqc.html
+[2019-07-01 14:01:54,584] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:02:00,696] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:02:03,378] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:02:10,373] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:02:16,721] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:02:22,661] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:02:28,390] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:02:35,138] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:02:43,486] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 16-Kapa-10ng-4_S16_L007_R2_001_fastqc.html
+[2019-07-01 14:02:43,507] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 16-Kapa-10ng-4_S16_L008_R2_001_fastqc.html
+[2019-07-01 14:02:43,528] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 16-Kapa-10ng-4_S16_L006_R2_001_fastqc.html
+[2019-07-01 14:02:45,710] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 16-Kapa-10ng-4_S16_L006_R1_001_fastqc.html
+[2019-07-01 14:02:50,885] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 16-Kapa-10ng-4_S16_L007_R1_001_fastqc.html
+[2019-07-01 14:02:50,906] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 16-Kapa-10ng-4_S16_L008_R1_001_fastqc.html
+[2019-07-01 14:02:50,926] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 16-Kapa-10ng-4_S16_L005_R1_001_fastqc.html
+[2019-07-01 14:02:50,945] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 16-Kapa-10ng-4_S16_L005_R2_001_fastqc.html
+[2019-07-01 14:02:50,966] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:02:57,945] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:02:59,191] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:02:59,975] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:00,761] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:01,546] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:02,309] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:03,095] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:03,890] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 14-Kapa-10ng-2_S14_L007_R1_001_fastqc.html
+[2019-07-01 14:03:03,893] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 14-Kapa-10ng-2_S14_L005_R2_001_fastqc.html
+[2019-07-01 14:03:03,897] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 14-Kapa-10ng-2_S14_L006_R2_001_fastqc.html
+[2019-07-01 14:03:03,900] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 14-Kapa-10ng-2_S14_L006_R1_001_fastqc.html
+[2019-07-01 14:03:03,904] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 14-Kapa-10ng-2_S14_L007_R2_001_fastqc.html
+[2019-07-01 14:03:04,144] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 14-Kapa-10ng-2_S14_L005_R1_001_fastqc.html
+[2019-07-01 14:03:04,853] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 14-Kapa-10ng-2_S14_L008_R2_001_fastqc.html
+[2019-07-01 14:03:04,857] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 14-Kapa-10ng-2_S14_L008_R1_001_fastqc.html
+[2019-07-01 14:03:04,861] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:05,655] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:06,454] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:07,224] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:08,008] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:08,788] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:09,587] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:10,369] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:11,121] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 28-Nextera-100ng-4_S4_L003_R1_001_fastqc.html
+[2019-07-01 14:03:11,124] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 28-Nextera-100ng-4_S4_L002_R1_001_fastqc.html
+[2019-07-01 14:03:11,127] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 28-Nextera-100ng-4_S4_L001_R1_001_fastqc.html
+[2019-07-01 14:03:11,424] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 28-Nextera-100ng-4_S4_L004_R1_001_fastqc.html
+[2019-07-01 14:03:11,429] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 28-Nextera-100ng-4_S4_L003_R2_001_fastqc.html
+[2019-07-01 14:03:11,896] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 28-Nextera-100ng-4_S4_L001_R2_001_fastqc.html
+[2019-07-01 14:03:12,383] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 28-Nextera-100ng-4_S4_L002_R2_001_fastqc.html
+[2019-07-01 14:03:12,387] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 28-Nextera-100ng-4_S4_L004_R2_001_fastqc.html
+[2019-07-01 14:03:12,395] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:13,171] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:13,944] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:14,734] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:15,503] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:16,272] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:17,047] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:17,811] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:18,596] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 26-Nextera-100ng-2_S2_L004_R2_001_fastqc.html
+[2019-07-01 14:03:18,600] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 26-Nextera-100ng-2_S2_L003_R2_001_fastqc.html
+[2019-07-01 14:03:18,839] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 26-Nextera-100ng-2_S2_L001_R2_001_fastqc.html
+[2019-07-01 14:03:18,843] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 26-Nextera-100ng-2_S2_L002_R2_001_fastqc.html
+[2019-07-01 14:03:18,847] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 26-Nextera-100ng-2_S2_L004_R1_001_fastqc.html
+[2019-07-01 14:03:18,851] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 26-Nextera-100ng-2_S2_L003_R1_001_fastqc.html
+[2019-07-01 14:03:19,088] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 26-Nextera-100ng-2_S2_L002_R1_001_fastqc.html
+[2019-07-01 14:03:19,328] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 26-Nextera-100ng-2_S2_L001_R1_001_fastqc.html
+[2019-07-01 14:03:19,568] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:20,345] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:21,134] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:21,946] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:22,725] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:23,525] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:24,313] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:25,105] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:26,658] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 31-Nextera-10ng-3_S7_L004_R1_001_fastqc.html
+[2019-07-01 14:03:26,662] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 31-Nextera-10ng-3_S7_L002_R2_001_fastqc.html
+[2019-07-01 14:03:26,666] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 31-Nextera-10ng-3_S7_L004_R2_001_fastqc.html
+[2019-07-01 14:03:26,670] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 31-Nextera-10ng-3_S7_L003_R1_001_fastqc.html
+[2019-07-01 14:03:26,674] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 31-Nextera-10ng-3_S7_L002_R1_001_fastqc.html
+[2019-07-01 14:03:26,678] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 31-Nextera-10ng-3_S7_L001_R1_001_fastqc.html
+[2019-07-01 14:03:26,930] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 31-Nextera-10ng-3_S7_L003_R2_001_fastqc.html
+[2019-07-01 14:03:26,934] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 31-Nextera-10ng-3_S7_L001_R2_001_fastqc.html
+[2019-07-01 14:03:26,938] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:27,734] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:28,526] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:29,335] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:30,123] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:30,916] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:31,700] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:32,477] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:33,488] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 32-Nextera-10ng-4_S8_L002_R2_001_fastqc.html
+[2019-07-01 14:03:33,491] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 32-Nextera-10ng-4_S8_L004_R2_001_fastqc.html
+[2019-07-01 14:03:33,495] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 32-Nextera-10ng-4_S8_L001_R2_001_fastqc.html
+[2019-07-01 14:03:33,967] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 32-Nextera-10ng-4_S8_L004_R1_001_fastqc.html
+[2019-07-01 14:03:33,972] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 32-Nextera-10ng-4_S8_L001_R1_001_fastqc.html
+[2019-07-01 14:03:33,976] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 32-Nextera-10ng-4_S8_L002_R1_001_fastqc.html
+[2019-07-01 14:03:34,214] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 32-Nextera-10ng-4_S8_L003_R1_001_fastqc.html
+[2019-07-01 14:03:34,218] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 32-Nextera-10ng-4_S8_L003_R2_001_fastqc.html
+[2019-07-01 14:03:34,221] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:35,005] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:35,802] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:36,582] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:37,355] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:38,151] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:38,936] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:39,726] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:40,748] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 25-Nextera-100ng-1_S1_L002_R1_001_fastqc.html
+[2019-07-01 14:03:40,752] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 25-Nextera-100ng-1_S1_L001_R1_001_fastqc.html
+[2019-07-01 14:03:40,756] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 25-Nextera-100ng-1_S1_L002_R2_001_fastqc.html
+[2019-07-01 14:03:40,759] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 25-Nextera-100ng-1_S1_L001_R2_001_fastqc.html
+[2019-07-01 14:03:40,762] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 25-Nextera-100ng-1_S1_L004_R2_001_fastqc.html
+[2019-07-01 14:03:40,766] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 25-Nextera-100ng-1_S1_L004_R1_001_fastqc.html
+[2019-07-01 14:03:41,008] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 25-Nextera-100ng-1_S1_L003_R1_001_fastqc.html
+[2019-07-01 14:03:41,027] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 25-Nextera-100ng-1_S1_L003_R2_001_fastqc.html
+[2019-07-01 14:03:41,500] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:42,279] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:43,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:43,859] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:44,626] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:45,395] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:46,183] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:46,976] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:47,718] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 11-Kapa-100ng-3_S11_L006_R1_001_fastqc.html
+[2019-07-01 14:03:47,721] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 11-Kapa-100ng-3_S11_L007_R2_001_fastqc.html
+[2019-07-01 14:03:47,725] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 11-Kapa-100ng-3_S11_L005_R2_001_fastqc.html
+[2019-07-01 14:03:47,728] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 11-Kapa-100ng-3_S11_L008_R1_001_fastqc.html
+[2019-07-01 14:03:47,732] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 11-Kapa-100ng-3_S11_L006_R2_001_fastqc.html
+[2019-07-01 14:03:48,190] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 11-Kapa-100ng-3_S11_L007_R1_001_fastqc.html
+[2019-07-01 14:03:48,194] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 11-Kapa-100ng-3_S11_L005_R1_001_fastqc.html
+[2019-07-01 14:03:48,197] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 11-Kapa-100ng-3_S11_L008_R2_001_fastqc.html
+[2019-07-01 14:03:48,666] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:49,374] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:49,975] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:50,676] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:51,278] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:51,972] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:52,652] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:53,251] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:53,835] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 29-Nextera-10ng-1_S5_L003_R1_001_fastqc.html
+[2019-07-01 14:03:54,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 29-Nextera-10ng-1_S5_L001_R2_001_fastqc.html
+[2019-07-01 14:03:54,078] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 29-Nextera-10ng-1_S5_L001_R1_001_fastqc.html
+[2019-07-01 14:03:54,561] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 29-Nextera-10ng-1_S5_L003_R2_001_fastqc.html
+[2019-07-01 14:03:54,566] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 29-Nextera-10ng-1_S5_L004_R1_001_fastqc.html
+[2019-07-01 14:03:54,570] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 29-Nextera-10ng-1_S5_L002_R2_001_fastqc.html
+[2019-07-01 14:03:54,574] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 29-Nextera-10ng-1_S5_L002_R1_001_fastqc.html
+[2019-07-01 14:03:54,578] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 29-Nextera-10ng-1_S5_L004_R2_001_fastqc.html
+[2019-07-01 14:03:54,819] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:55,593] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:56,379] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:57,159] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:57,928] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:58,704] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:03:59,489] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:00,285] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:01,067] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 30-Nextera-10ng-2_S6_L003_R1_001_fastqc.html
+[2019-07-01 14:04:01,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 30-Nextera-10ng-2_S6_L001_R2_001_fastqc.html
+[2019-07-01 14:04:01,074] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 30-Nextera-10ng-2_S6_L003_R2_001_fastqc.html
+[2019-07-01 14:04:01,313] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 30-Nextera-10ng-2_S6_L004_R1_001_fastqc.html
+[2019-07-01 14:04:01,317] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 30-Nextera-10ng-2_S6_L002_R2_001_fastqc.html
+[2019-07-01 14:04:01,561] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 30-Nextera-10ng-2_S6_L004_R2_001_fastqc.html
+[2019-07-01 14:04:01,565] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 30-Nextera-10ng-2_S6_L001_R1_001_fastqc.html
+[2019-07-01 14:04:01,804] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 30-Nextera-10ng-2_S6_L002_R1_001_fastqc.html
+[2019-07-01 14:04:02,046] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:02,819] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:03,613] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:04,400] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:05,159] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:05,927] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:06,695] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:07,478] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:08,261] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: multiqc_report.html
+[2019-07-01 14:04:09,007] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 24-Quanta-10ng-4_S16_L008_R1_001_fastqc.html
+[2019-07-01 14:04:09,011] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 24-Quanta-10ng-4_S16_L006_R1_001_fastqc.html
+[2019-07-01 14:04:09,014] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 24-Quanta-10ng-4_S16_L008_R2_001_fastqc.html
+[2019-07-01 14:04:09,018] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 24-Quanta-10ng-4_S16_L006_R2_001_fastqc.html
+[2019-07-01 14:04:09,963] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 24-Quanta-10ng-4_S16_L007_R2_001_fastqc.html
+[2019-07-01 14:04:09,967] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 24-Quanta-10ng-4_S16_L005_R1_001_fastqc.html
+[2019-07-01 14:04:09,971] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 24-Quanta-10ng-4_S16_L007_R1_001_fastqc.html
+[2019-07-01 14:04:09,976] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 24-Quanta-10ng-4_S16_L005_R2_001_fastqc.html
+[2019-07-01 14:04:09,980] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:10,742] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:11,434] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:12,243] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:12,944] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:13,588] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:14,291] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:14,922] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:15,633] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 38-NEB-10ng-2_S6_L001_R2_001_fastqc.html
+[2019-07-01 14:04:15,636] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 38-NEB-10ng-2_S6_L002_R2_001_fastqc.html
+[2019-07-01 14:04:15,856] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 38-NEB-10ng-2_S6_L003_R2_001_fastqc.html
+[2019-07-01 14:04:15,859] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 38-NEB-10ng-2_S6_L002_R1_001_fastqc.html
+[2019-07-01 14:04:15,863] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 38-NEB-10ng-2_S6_L004_R1_001_fastqc.html
+[2019-07-01 14:04:15,866] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 38-NEB-10ng-2_S6_L004_R2_001_fastqc.html
+[2019-07-01 14:04:16,090] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 38-NEB-10ng-2_S6_L003_R1_001_fastqc.html
+[2019-07-01 14:04:16,093] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 38-NEB-10ng-2_S6_L001_R1_001_fastqc.html
+[2019-07-01 14:04:16,531] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:17,062] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:17,736] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:18,447] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:19,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:19,694] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:20,397] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:21,103] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:21,658] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 22-Quanta-10ng-2_S14_L008_R1_001_fastqc.html
+[2019-07-01 14:04:22,086] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 22-Quanta-10ng-2_S14_L005_R1_001_fastqc.html
+[2019-07-01 14:04:22,089] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 22-Quanta-10ng-2_S14_L006_R1_001_fastqc.html
+[2019-07-01 14:04:22,092] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 22-Quanta-10ng-2_S14_L007_R2_001_fastqc.html
+[2019-07-01 14:04:22,095] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 22-Quanta-10ng-2_S14_L005_R2_001_fastqc.html
+[2019-07-01 14:04:22,098] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 22-Quanta-10ng-2_S14_L007_R1_001_fastqc.html
+[2019-07-01 14:04:22,303] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 22-Quanta-10ng-2_S14_L008_R2_001_fastqc.html
+[2019-07-01 14:04:22,306] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 22-Quanta-10ng-2_S14_L006_R2_001_fastqc.html
+[2019-07-01 14:04:22,501] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:23,162] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:23,869] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:24,537] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:25,201] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:25,865] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:26,522] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:27,120] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:27,790] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 17-Quanta-100ng-1_S9_L006_R1_001_fastqc.html
+[2019-07-01 14:04:27,793] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 17-Quanta-100ng-1_S9_L005_R2_001_fastqc.html
+[2019-07-01 14:04:27,796] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 17-Quanta-100ng-1_S9_L007_R2_001_fastqc.html
+[2019-07-01 14:04:27,995] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 17-Quanta-100ng-1_S9_L008_R1_001_fastqc.html
+[2019-07-01 14:04:27,999] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 17-Quanta-100ng-1_S9_L008_R2_001_fastqc.html
+[2019-07-01 14:04:28,635] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 17-Quanta-100ng-1_S9_L006_R2_001_fastqc.html
+[2019-07-01 14:04:28,638] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 17-Quanta-100ng-1_S9_L007_R1_001_fastqc.html
+[2019-07-01 14:04:28,642] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 17-Quanta-100ng-1_S9_L005_R1_001_fastqc.html
+[2019-07-01 14:04:28,645] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:29,340] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:30,020] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:30,730] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:31,417] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:32,060] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:32,740] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:33,447] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:34,585] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 21-Quanta-10ng-1_S13_L008_R2_001_fastqc.html
+[2019-07-01 14:04:34,589] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 21-Quanta-10ng-1_S13_L007_R1_001_fastqc.html
+[2019-07-01 14:04:34,593] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 21-Quanta-10ng-1_S13_L007_R2_001_fastqc.html
+[2019-07-01 14:04:34,596] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 21-Quanta-10ng-1_S13_L008_R1_001_fastqc.html
+[2019-07-01 14:04:34,599] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 21-Quanta-10ng-1_S13_L006_R2_001_fastqc.html
+[2019-07-01 14:04:34,816] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 21-Quanta-10ng-1_S13_L005_R1_001_fastqc.html
+[2019-07-01 14:04:35,035] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 21-Quanta-10ng-1_S13_L005_R2_001_fastqc.html
+[2019-07-01 14:04:35,038] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 21-Quanta-10ng-1_S13_L006_R1_001_fastqc.html
+[2019-07-01 14:04:35,041] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:35,755] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:36,468] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:37,176] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:37,870] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:38,580] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:39,288] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:39,988] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:40,697] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 36-NEB-100ng-4_S4_L001_R2_001_fastqc.html
+[2019-07-01 14:04:40,701] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 36-NEB-100ng-4_S4_L003_R2_001_fastqc.html
+[2019-07-01 14:04:40,704] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 36-NEB-100ng-4_S4_L002_R2_001_fastqc.html
+[2019-07-01 14:04:40,926] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 36-NEB-100ng-4_S4_L004_R1_001_fastqc.html
+[2019-07-01 14:04:40,994] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 36-NEB-100ng-4_S4_L001_R1_001_fastqc.html
+[2019-07-01 14:04:40,998] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 36-NEB-100ng-4_S4_L002_R1_001_fastqc.html
+[2019-07-01 14:04:41,001] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 36-NEB-100ng-4_S4_L003_R1_001_fastqc.html
+[2019-07-01 14:04:41,451] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 36-NEB-100ng-4_S4_L004_R2_001_fastqc.html
+[2019-07-01 14:04:41,676] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:42,319] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:42,952] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:43,590] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:44,299] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:44,929] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:45,666] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:46,421] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:47,130] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 35-NEB-100ng-3_S3_L004_R2_001_fastqc.html
+[2019-07-01 14:04:47,133] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 35-NEB-100ng-3_S3_L003_R1_001_fastqc.html
+[2019-07-01 14:04:47,356] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 35-NEB-100ng-3_S3_L002_R2_001_fastqc.html
+[2019-07-01 14:04:47,576] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 35-NEB-100ng-3_S3_L001_R1_001_fastqc.html
+[2019-07-01 14:04:47,579] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 35-NEB-100ng-3_S3_L004_R1_001_fastqc.html
+[2019-07-01 14:04:48,017] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 35-NEB-100ng-3_S3_L003_R2_001_fastqc.html
+[2019-07-01 14:04:48,021] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 35-NEB-100ng-3_S3_L002_R1_001_fastqc.html
+[2019-07-01 14:04:48,024] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 35-NEB-100ng-3_S3_L001_R2_001_fastqc.html
+[2019-07-01 14:04:48,027] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:48,576] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:49,090] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:49,779] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:50,410] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:50,928] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:51,603] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:52,261] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:53,175] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 20-Quanta-100ng-4_S12_L005_R1_001_fastqc.html
+[2019-07-01 14:04:53,179] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 20-Quanta-100ng-4_S12_L006_R2_001_fastqc.html
+[2019-07-01 14:04:53,182] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 20-Quanta-100ng-4_S12_L006_R1_001_fastqc.html
+[2019-07-01 14:04:53,185] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 20-Quanta-100ng-4_S12_L008_R1_001_fastqc.html
+[2019-07-01 14:04:53,189] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 20-Quanta-100ng-4_S12_L007_R2_001_fastqc.html
+[2019-07-01 14:04:53,192] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 20-Quanta-100ng-4_S12_L007_R1_001_fastqc.html
+[2019-07-01 14:04:53,195] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 20-Quanta-100ng-4_S12_L005_R2_001_fastqc.html
+[2019-07-01 14:04:53,417] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 20-Quanta-100ng-4_S12_L008_R2_001_fastqc.html
+[2019-07-01 14:04:53,858] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:54,570] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:55,327] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:56,090] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:56,864] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:57,658] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:58,445] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:04:59,227] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:00,025] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 19-Quanta-100ng-3_S11_L005_R1_001_fastqc.html
+[2019-07-01 14:05:00,029] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 19-Quanta-100ng-3_S11_L007_R1_001_fastqc.html
+[2019-07-01 14:05:00,277] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 19-Quanta-100ng-3_S11_L005_R2_001_fastqc.html
+[2019-07-01 14:05:00,516] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 19-Quanta-100ng-3_S11_L006_R1_001_fastqc.html
+[2019-07-01 14:05:00,520] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 19-Quanta-100ng-3_S11_L007_R2_001_fastqc.html
+[2019-07-01 14:05:00,757] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 19-Quanta-100ng-3_S11_L006_R2_001_fastqc.html
+[2019-07-01 14:05:00,761] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 19-Quanta-100ng-3_S11_L008_R1_001_fastqc.html
+[2019-07-01 14:05:00,999] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 19-Quanta-100ng-3_S11_L008_R2_001_fastqc.html
+[2019-07-01 14:05:01,003] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:01,805] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:02,616] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:03,386] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:04,152] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:04,949] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:05,746] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:06,565] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:07,597] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 33-NEB-100ng-1_S1_L003_R1_001_fastqc.html
+[2019-07-01 14:05:07,601] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 33-NEB-100ng-1_S1_L004_R2_001_fastqc.html
+[2019-07-01 14:05:07,605] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 33-NEB-100ng-1_S1_L002_R1_001_fastqc.html
+[2019-07-01 14:05:07,609] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 33-NEB-100ng-1_S1_L003_R2_001_fastqc.html
+[2019-07-01 14:05:07,613] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 33-NEB-100ng-1_S1_L004_R1_001_fastqc.html
+[2019-07-01 14:05:08,324] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 33-NEB-100ng-1_S1_L001_R2_001_fastqc.html
+[2019-07-01 14:05:08,328] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 33-NEB-100ng-1_S1_L001_R1_001_fastqc.html
+[2019-07-01 14:05:08,331] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 33-NEB-100ng-1_S1_L002_R2_001_fastqc.html
+[2019-07-01 14:05:08,335] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:09,119] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:09,902] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:10,597] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:11,371] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:11,976] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:12,761] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:13,348] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:14,039] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 18-Quanta-100ng-2_S10_L008_R2_001_fastqc.html
+[2019-07-01 14:05:14,497] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 18-Quanta-100ng-2_S10_L006_R1_001_fastqc.html
+[2019-07-01 14:05:14,501] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 18-Quanta-100ng-2_S10_L007_R2_001_fastqc.html
+[2019-07-01 14:05:14,504] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 18-Quanta-100ng-2_S10_L008_R1_001_fastqc.html
+[2019-07-01 14:05:14,982] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 18-Quanta-100ng-2_S10_L005_R1_001_fastqc.html
+[2019-07-01 14:05:14,986] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 18-Quanta-100ng-2_S10_L005_R2_001_fastqc.html
+[2019-07-01 14:05:14,990] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 18-Quanta-100ng-2_S10_L007_R1_001_fastqc.html
+[2019-07-01 14:05:14,995] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 18-Quanta-100ng-2_S10_L006_R2_001_fastqc.html
+[2019-07-01 14:05:15,000] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:15,719] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:16,514] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:17,207] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:17,981] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:18,792] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:19,588] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:20,376] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:21,164] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 40-NEB-10ng-4_S8_L004_R2_001_fastqc.html
+[2019-07-01 14:05:21,408] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 40-NEB-10ng-4_S8_L002_R1_001_fastqc.html
+[2019-07-01 14:05:21,650] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 40-NEB-10ng-4_S8_L001_R1_001_fastqc.html
+[2019-07-01 14:05:21,886] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 40-NEB-10ng-4_S8_L003_R1_001_fastqc.html
+[2019-07-01 14:05:22,122] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 40-NEB-10ng-4_S8_L003_R2_001_fastqc.html
+[2019-07-01 14:05:22,127] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 40-NEB-10ng-4_S8_L002_R2_001_fastqc.html
+[2019-07-01 14:05:22,131] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 40-NEB-10ng-4_S8_L001_R2_001_fastqc.html
+[2019-07-01 14:05:22,135] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 40-NEB-10ng-4_S8_L004_R1_001_fastqc.html
+[2019-07-01 14:05:22,139] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:22,929] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:23,737] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:24,529] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:25,323] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:26,088] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:26,887] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:27,693] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:28,479] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 39-NEB-10ng-3_S7_L002_R2_001_fastqc.html
+[2019-07-01 14:05:28,725] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 39-NEB-10ng-3_S7_L001_R2_001_fastqc.html
+[2019-07-01 14:05:28,729] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 39-NEB-10ng-3_S7_L001_R1_001_fastqc.html
+[2019-07-01 14:05:28,732] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 39-NEB-10ng-3_S7_L004_R1_001_fastqc.html
+[2019-07-01 14:05:28,736] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 39-NEB-10ng-3_S7_L003_R1_001_fastqc.html
+[2019-07-01 14:05:28,740] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 39-NEB-10ng-3_S7_L004_R2_001_fastqc.html
+[2019-07-01 14:05:28,745] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 39-NEB-10ng-3_S7_L003_R2_001_fastqc.html
+[2019-07-01 14:05:28,749] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 39-NEB-10ng-3_S7_L002_R1_001_fastqc.html
+[2019-07-01 14:05:29,454] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:30,050] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:30,846] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:31,452] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:32,050] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:32,651] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:33,445] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:34,227] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:35,243] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 34-NEB-100ng-2_S2_L001_R2_001_fastqc.html
+[2019-07-01 14:05:35,477] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 34-NEB-100ng-2_S2_L003_R2_001_fastqc.html
+[2019-07-01 14:05:35,713] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 34-NEB-100ng-2_S2_L003_R1_001_fastqc.html
+[2019-07-01 14:05:35,717] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 34-NEB-100ng-2_S2_L001_R1_001_fastqc.html
+[2019-07-01 14:05:35,721] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 34-NEB-100ng-2_S2_L004_R1_001_fastqc.html
+[2019-07-01 14:05:35,725] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 34-NEB-100ng-2_S2_L002_R1_001_fastqc.html
+[2019-07-01 14:05:35,729] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 34-NEB-100ng-2_S2_L004_R2_001_fastqc.html
+[2019-07-01 14:05:35,733] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 34-NEB-100ng-2_S2_L002_R2_001_fastqc.html
+[2019-07-01 14:05:35,971] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:36,687] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:37,382] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:38,129] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:38,906] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:39,603] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:40,300] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:41,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:41,856] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 23-Quanta-10ng-3_S15_L005_R1_001_fastqc.html
+[2019-07-01 14:05:42,097] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 23-Quanta-10ng-3_S15_L008_R2_001_fastqc.html
+[2019-07-01 14:05:42,101] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 23-Quanta-10ng-3_S15_L005_R2_001_fastqc.html
+[2019-07-01 14:05:42,104] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 23-Quanta-10ng-3_S15_L006_R1_001_fastqc.html
+[2019-07-01 14:05:42,108] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 23-Quanta-10ng-3_S15_L007_R1_001_fastqc.html
+[2019-07-01 14:05:42,112] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 23-Quanta-10ng-3_S15_L007_R2_001_fastqc.html
+[2019-07-01 14:05:42,357] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 23-Quanta-10ng-3_S15_L006_R2_001_fastqc.html
+[2019-07-01 14:05:42,828] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 23-Quanta-10ng-3_S15_L008_R1_001_fastqc.html
+[2019-07-01 14:05:42,833] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:43,535] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:44,225] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:44,921] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:45,711] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:46,504] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:47,294] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:47,998] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:48,808] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 37-NEB-10ng-1_S5_L001_R2_001_fastqc.html
+[2019-07-01 14:05:48,812] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 37-NEB-10ng-1_S5_L004_R1_001_fastqc.html
+[2019-07-01 14:05:49,053] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 37-NEB-10ng-1_S5_L001_R1_001_fastqc.html
+[2019-07-01 14:05:49,291] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 37-NEB-10ng-1_S5_L003_R2_001_fastqc.html
+[2019-07-01 14:05:49,295] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 37-NEB-10ng-1_S5_L002_R2_001_fastqc.html
+[2019-07-01 14:05:49,299] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 37-NEB-10ng-1_S5_L003_R1_001_fastqc.html
+[2019-07-01 14:05:49,303] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 37-NEB-10ng-1_S5_L002_R1_001_fastqc.html
+[2019-07-01 14:05:49,307] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 37-NEB-10ng-1_S5_L004_R2_001_fastqc.html
+[2019-07-01 14:05:49,780] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:50,567] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:51,363] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:52,133] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:52,892] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:53,691] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:54,508] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:55,234] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:56,007] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: multiqc_report.html
+[2019-07-01 14:05:56,500] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 6-Swift2S-10ng-2_S9_L005_R2_001_fastqc.html
+[2019-07-01 14:05:56,738] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 6-Swift2S-10ng-2_S9_L005_R1_001_fastqc.html
+[2019-07-01 14:05:56,742] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 6-Swift2S-10ng-2_S9_L007_R2_001_fastqc.html
+[2019-07-01 14:05:56,983] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 6-Swift2S-10ng-2_S9_L007_R1_001_fastqc.html
+[2019-07-01 14:05:57,223] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 6-Swift2S-10ng-2_S9_L008_R1_001_fastqc.html
+[2019-07-01 14:05:57,227] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 6-Swift2S-10ng-2_S9_L006_R2_001_fastqc.html
+[2019-07-01 14:05:57,474] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 6-Swift2S-10ng-2_S9_L008_R2_001_fastqc.html
+[2019-07-01 14:05:57,478] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 6-Swift2S-10ng-2_S9_L006_R1_001_fastqc.html
+[2019-07-01 14:05:57,482] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:58,275] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:59,087] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:05:59,889] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:00,714] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:01,512] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:02,306] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:03,105] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:03,902] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 3-Swift2S-100ng-3_S7_L007_R1_001_fastqc.html
+[2019-07-01 14:06:03,906] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 3-Swift2S-100ng-3_S7_L006_R2_001_fastqc.html
+[2019-07-01 14:06:04,149] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 3-Swift2S-100ng-3_S7_L006_R1_001_fastqc.html
+[2019-07-01 14:06:04,390] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 3-Swift2S-100ng-3_S7_L005_R2_001_fastqc.html
+[2019-07-01 14:06:04,394] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 3-Swift2S-100ng-3_S7_L007_R2_001_fastqc.html
+[2019-07-01 14:06:04,397] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 3-Swift2S-100ng-3_S7_L008_R1_001_fastqc.html
+[2019-07-01 14:06:04,401] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 3-Swift2S-100ng-3_S7_L005_R1_001_fastqc.html
+[2019-07-01 14:06:04,875] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 3-Swift2S-100ng-3_S7_L008_R2_001_fastqc.html
+[2019-07-01 14:06:04,879] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:05,639] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:06,353] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:07,031] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:07,735] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:08,332] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:09,028] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:09,807] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:10,517] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 2-Swift2S-100ng-2_S6_L007_R2_001_fastqc.html
+[2019-07-01 14:06:10,521] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 2-Swift2S-100ng-2_S6_L006_R1_001_fastqc.html
+[2019-07-01 14:06:10,525] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 2-Swift2S-100ng-2_S6_L007_R1_001_fastqc.html
+[2019-07-01 14:06:10,529] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 2-Swift2S-100ng-2_S6_L005_R1_001_fastqc.html
+[2019-07-01 14:06:10,766] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 2-Swift2S-100ng-2_S6_L008_R1_001_fastqc.html
+[2019-07-01 14:06:10,770] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 2-Swift2S-100ng-2_S6_L008_R2_001_fastqc.html
+[2019-07-01 14:06:11,239] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 2-Swift2S-100ng-2_S6_L006_R2_001_fastqc.html
+[2019-07-01 14:06:11,543] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 2-Swift2S-100ng-2_S6_L005_R2_001_fastqc.html
+[2019-07-01 14:06:11,547] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:12,337] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:13,139] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:13,943] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:14,730] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:15,538] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:16,331] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:17,134] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:18,169] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 7-Swift2S-10ng-3_S10_L008_R1_001_fastqc.html
+[2019-07-01 14:06:18,173] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 7-Swift2S-10ng-3_S10_L006_R1_001_fastqc.html
+[2019-07-01 14:06:18,177] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 7-Swift2S-10ng-3_S10_L006_R2_001_fastqc.html
+[2019-07-01 14:06:18,181] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 7-Swift2S-10ng-3_S10_L005_R2_001_fastqc.html
+[2019-07-01 14:06:18,185] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 7-Swift2S-10ng-3_S10_L007_R2_001_fastqc.html
+[2019-07-01 14:06:18,896] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 7-Swift2S-10ng-3_S10_L008_R2_001_fastqc.html
+[2019-07-01 14:06:18,901] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 7-Swift2S-10ng-3_S10_L007_R1_001_fastqc.html
+[2019-07-01 14:06:18,904] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 7-Swift2S-10ng-3_S10_L005_R1_001_fastqc.html
+[2019-07-01 14:06:18,909] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:19,698] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:20,471] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:21,274] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:22,047] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:22,763] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:23,544] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:24,295] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:25,034] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 1-Swift2S-100ng-1_S5_L007_R1_001_fastqc.html
+[2019-07-01 14:06:25,038] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 1-Swift2S-100ng-1_S5_L008_R1_001_fastqc.html
+[2019-07-01 14:06:25,042] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 1-Swift2S-100ng-1_S5_L005_R1_001_fastqc.html
+[2019-07-01 14:06:25,479] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 1-Swift2S-100ng-1_S5_L005_R2_001_fastqc.html
+[2019-07-01 14:06:25,483] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 1-Swift2S-100ng-1_S5_L006_R1_001_fastqc.html
+[2019-07-01 14:06:25,487] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 1-Swift2S-100ng-1_S5_L007_R2_001_fastqc.html
+[2019-07-01 14:06:25,491] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 1-Swift2S-100ng-1_S5_L006_R2_001_fastqc.html
+[2019-07-01 14:06:25,711] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 1-Swift2S-100ng-1_S5_L008_R2_001_fastqc.html
+[2019-07-01 14:06:25,931] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:26,676] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:27,394] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:28,126] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:28,909] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:29,669] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:30,419] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:31,170] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:31,893] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 5-Swift2S-10ng-1_S12_L006_R1_001_fastqc.html
+[2019-07-01 14:06:31,897] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 5-Swift2S-10ng-1_S12_L005_R1_001_fastqc.html
+[2019-07-01 14:06:32,126] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 5-Swift2S-10ng-1_S12_L007_R2_001_fastqc.html
+[2019-07-01 14:06:32,130] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 5-Swift2S-10ng-1_S12_L008_R2_001_fastqc.html
+[2019-07-01 14:06:32,134] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 5-Swift2S-10ng-1_S12_L006_R2_001_fastqc.html
+[2019-07-01 14:06:32,370] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 5-Swift2S-10ng-1_S12_L008_R1_001_fastqc.html
+[2019-07-01 14:06:32,374] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 5-Swift2S-10ng-1_S12_L005_R2_001_fastqc.html
+[2019-07-01 14:06:32,605] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 5-Swift2S-10ng-1_S12_L007_R1_001_fastqc.html
+[2019-07-01 14:06:32,838] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:33,621] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:34,427] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:35,200] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:35,996] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:36,794] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:37,588] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:38,352] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:39,156] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 4-Swift2S-100ng-4_S8_L007_R2_001_fastqc.html
+[2019-07-01 14:06:39,161] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 4-Swift2S-100ng-4_S8_L005_R2_001_fastqc.html
+[2019-07-01 14:06:39,165] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 4-Swift2S-100ng-4_S8_L008_R1_001_fastqc.html
+[2019-07-01 14:06:39,645] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 4-Swift2S-100ng-4_S8_L006_R1_001_fastqc.html
+[2019-07-01 14:06:39,876] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 4-Swift2S-100ng-4_S8_L006_R2_001_fastqc.html
+[2019-07-01 14:06:39,879] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 4-Swift2S-100ng-4_S8_L005_R1_001_fastqc.html
+[2019-07-01 14:06:39,883] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 4-Swift2S-100ng-4_S8_L007_R1_001_fastqc.html
+[2019-07-01 14:06:39,886] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 4-Swift2S-100ng-4_S8_L008_R2_001_fastqc.html
+[2019-07-01 14:06:40,121] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:40,897] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:41,498] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:42,109] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:42,708] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:43,309] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:44,102] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:44,901] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:45,940] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 8-Swift2S-10ng-4_S11_L006_R1_001_fastqc.html
+[2019-07-01 14:06:46,177] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 8-Swift2S-10ng-4_S11_L008_R1_001_fastqc.html
+[2019-07-01 14:06:46,652] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 8-Swift2S-10ng-4_S11_L007_R1_001_fastqc.html
+[2019-07-01 14:06:46,656] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 8-Swift2S-10ng-4_S11_L008_R2_001_fastqc.html
+[2019-07-01 14:06:46,660] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 8-Swift2S-10ng-4_S11_L006_R2_001_fastqc.html
+[2019-07-01 14:06:46,664] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 8-Swift2S-10ng-4_S11_L005_R2_001_fastqc.html
+[2019-07-01 14:06:46,668] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 8-Swift2S-10ng-4_S11_L005_R1_001_fastqc.html
+[2019-07-01 14:06:46,672] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: 8-Swift2S-10ng-4_S11_L007_R2_001_fastqc.html
+[2019-07-01 14:06:46,677] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:47,476] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:48,225] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:49,039] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:49,847] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:50,603] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:51,412] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:52,181] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: fastqc_report.html
+[2019-07-01 14:06:53,246] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2019-07-01 14:06:53,251] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2019-07-01 14:06:53,256] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2019-07-01 14:06:53,261] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2019-07-01 14:06:53,266] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2019-07-01 14:06:53,272] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2019-07-01 14:06:53,277] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2019-07-01 14:06:53,282] multiqc                                            [DEBUG  ]  No samples found: quast
+[2019-07-01 14:06:53,287] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2019-07-01 14:06:53,292] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2019-07-01 14:06:53,297] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2019-07-01 14:06:53,304] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2019-07-01 14:06:53,309] multiqc                                            [DEBUG  ]  No samples found: busco
+[2019-07-01 14:06:53,314] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2019-07-01 14:06:53,319] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2019-07-01 14:06:53,324] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2019-07-01 14:06:53,332] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2019-07-01 14:06:53,337] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2019-07-01 14:06:53,342] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2019-07-01 14:06:53,348] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2019-07-01 14:06:53,353] multiqc                                            [DEBUG  ]  No samples found: happy
+[2019-07-01 14:06:53,358] multiqc                                            [DEBUG  ]  No samples found: homer
+[2019-07-01 14:06:53,363] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2019-07-01 14:06:53,368] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2019-07-01 14:06:53,373] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2019-07-01 14:06:53,379] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2019-07-01 14:06:53,384] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2019-07-01 14:06:53,389] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2019-07-01 14:06:53,394] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2019-07-01 14:06:53,399] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2019-07-01 14:06:53,404] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2019-07-01 14:06:53,413] multiqc                                            [DEBUG  ]  No samples found: picard
+[2019-07-01 14:06:53,418] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2019-07-01 14:06:53,423] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2019-07-01 14:06:53,429] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2019-07-01 14:06:53,434] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2019-07-01 14:06:53,439] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2019-07-01 14:06:53,445] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2019-07-01 14:06:53,450] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2019-07-01 14:06:53,455] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2019-07-01 14:06:53,463] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2019-07-01 14:06:53,468] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2019-07-01 14:06:53,473] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2019-07-01 14:06:53,478] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2019-07-01 14:06:53,483] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2019-07-01 14:06:53,488] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2019-07-01 14:06:53,493] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2019-07-01 14:06:53,498] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2019-07-01 14:06:53,503] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2019-07-01 14:06:53,508] multiqc                                            [DEBUG  ]  No samples found: star
+[2019-07-01 14:06:53,513] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2019-07-01 14:06:53,518] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2019-07-01 14:06:53,523] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2019-07-01 14:06:53,528] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2019-07-01 14:06:53,533] multiqc                                            [DEBUG  ]  No samples found: kat
+[2019-07-01 14:06:53,538] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2019-07-01 14:06:53,543] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2019-07-01 14:06:53,547] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2019-07-01 14:06:53,552] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2019-07-01 14:06:53,557] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2019-07-01 14:06:53,562] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2019-07-01 14:06:53,567] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2019-07-01 14:06:53,572] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2019-07-01 14:06:53,577] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2019-07-01 14:06:53,582] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2019-07-01 14:06:53,586] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2019-07-01 14:06:53,591] multiqc                                            [DEBUG  ]  No samples found: fastp
+[2019-07-01 14:07:06,537] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 320 reports
+[2019-07-01 14:07:48,227] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2019-07-01 14:07:48,232] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2019-07-01 14:07:48,240] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2019-07-01 14:07:48,246] multiqc                                            [DEBUG  ]  No samples found: interop
+[2019-07-01 14:07:48,251] multiqc                                            [DEBUG  ]  No samples found: flash
+[2019-07-01 14:07:48,893] multiqc                                            [INFO   ]  Compressing plot data
+[2019-07-01 14:07:48,956] multiqc                                            [INFO   ]  Report      : multiqc_report.html
+[2019-07-01 14:07:48,957] multiqc                                            [INFO   ]  Data        : multiqc_data
+[2019-07-01 14:07:49,024] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/hs/s6yv0thn5lz086vmzz8n095m0000gn/T/tmpxds9k70x/multiqc_data/multiqc_fastqc.txt' to '/Volumes/runScratch/analysis/projects/Ribarska-DNAlibs-2019-04-01/01_data_qc/multiqc_data'
+[2019-07-01 14:07:49,109] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/hs/s6yv0thn5lz086vmzz8n095m0000gn/T/tmpxds9k70x/multiqc_data/mqc_fastqc_per_base_sequence_quality_plot_1.txt' to '/Volumes/runScratch/analysis/projects/Ribarska-DNAlibs-2019-04-01/01_data_qc/multiqc_data'
+[2019-07-01 14:07:49,135] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/hs/s6yv0thn5lz086vmzz8n095m0000gn/T/tmpxds9k70x/multiqc_data/mqc_fastqc_per_sequence_quality_scores_plot_1.txt' to '/Volumes/runScratch/analysis/projects/Ribarska-DNAlibs-2019-04-01/01_data_qc/multiqc_data'
+[2019-07-01 14:07:49,160] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/hs/s6yv0thn5lz086vmzz8n095m0000gn/T/tmpxds9k70x/multiqc_data/mqc_fastqc_sequence_counts_plot_1.txt' to '/Volumes/runScratch/analysis/projects/Ribarska-DNAlibs-2019-04-01/01_data_qc/multiqc_data'
+[2019-07-01 14:07:49,185] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/hs/s6yv0thn5lz086vmzz8n095m0000gn/T/tmpxds9k70x/multiqc_data/mqc_fastqc_per_sequence_gc_content_plot_Percentages.txt' to '/Volumes/runScratch/analysis/projects/Ribarska-DNAlibs-2019-04-01/01_data_qc/multiqc_data'
+[2019-07-01 14:07:49,218] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/hs/s6yv0thn5lz086vmzz8n095m0000gn/T/tmpxds9k70x/multiqc_data/mqc_fastqc_per_sequence_gc_content_plot_Counts.txt' to '/Volumes/runScratch/analysis/projects/Ribarska-DNAlibs-2019-04-01/01_data_qc/multiqc_data'
+[2019-07-01 14:07:49,246] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/hs/s6yv0thn5lz086vmzz8n095m0000gn/T/tmpxds9k70x/multiqc_data/mqc_fastqc_sequence_duplication_levels_plot_1.txt' to '/Volumes/runScratch/analysis/projects/Ribarska-DNAlibs-2019-04-01/01_data_qc/multiqc_data'
+[2019-07-01 14:07:49,304] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/hs/s6yv0thn5lz086vmzz8n095m0000gn/T/tmpxds9k70x/multiqc_data/multiqc_general_stats.txt' to '/Volumes/runScratch/analysis/projects/Ribarska-DNAlibs-2019-04-01/01_data_qc/multiqc_data'
+[2019-07-01 14:07:49,330] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/hs/s6yv0thn5lz086vmzz8n095m0000gn/T/tmpxds9k70x/multiqc_data/mqc_fastqc_overrepresented_sequencesi_plot_1.txt' to '/Volumes/runScratch/analysis/projects/Ribarska-DNAlibs-2019-04-01/01_data_qc/multiqc_data'
+[2019-07-01 14:07:49,354] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/hs/s6yv0thn5lz086vmzz8n095m0000gn/T/tmpxds9k70x/multiqc_data/multiqc_sources.txt' to '/Volumes/runScratch/analysis/projects/Ribarska-DNAlibs-2019-04-01/01_data_qc/multiqc_data'
+[2019-07-01 14:07:49,381] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/hs/s6yv0thn5lz086vmzz8n095m0000gn/T/tmpxds9k70x/multiqc_data/mqc_fastqc_per_base_n_content_plot_1.txt' to '/Volumes/runScratch/analysis/projects/Ribarska-DNAlibs-2019-04-01/01_data_qc/multiqc_data'
+[2019-07-01 14:07:49,411] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/hs/s6yv0thn5lz086vmzz8n095m0000gn/T/tmpxds9k70x/multiqc_data/mqc_fastqc_adapter_content_plot_1.txt' to '/Volumes/runScratch/analysis/projects/Ribarska-DNAlibs-2019-04-01/01_data_qc/multiqc_data'
+[2019-07-01 14:07:49,443] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/hs/s6yv0thn5lz086vmzz8n095m0000gn/T/tmpxds9k70x/multiqc_data/multiqc_data.json' to '/Volumes/runScratch/analysis/projects/Ribarska-DNAlibs-2019-04-01/01_data_qc/multiqc_data'
+[2019-07-01 14:07:49,780] multiqc                                            [INFO   ]  MultiQC complete
