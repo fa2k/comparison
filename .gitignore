@@ -10,4 +10,4 @@ nohup*.out
 downsample*.txt
 ref/
 confident_calls/
-sampleList.txt
+sampleList*.txt
