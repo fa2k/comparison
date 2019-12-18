@@ -9,5 +9,6 @@ work/
 nohup*.out
 downsample*.txt
 ref/
+tmp/
 confident_calls/
 sampleList*.txt
