@@ -1,5 +1,6 @@
 ?0_*
 01_data_qc/QualityControl/
+01_data_qc/sequencing-metrics.csv
 .ipynb_checkpoints
 data
 metrics/
