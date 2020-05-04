@@ -34,6 +34,7 @@ echo plotCoverage -b $bam_files --label $bam_names \
                 --outRawCounts 50_deeptools_summary/coverage_all_aa_100ng.txt
 
 echo bamPEFragmentSize --bamfiles $bam_files \
+                --numberOfProcessors 4 --binSize 3000 --distanceBetweenBins 10000 \
                 --histogram 50_deeptools_summary/insertSize_histogram_all_aa_100ng.pdf \
                 --outRawFragmentLengths 50_deeptools_summary/insertSize_all_aa_100ng.txt
 
@@ -52,6 +53,7 @@ echo plotCoverage -b $bam_files --label $bam_names \
                 --outRawCounts 50_deeptools_summary/coverage_all_aa_10ng.txt
 
 echo bamPEFragmentSize --bamfiles $bam_files \
+                --numberOfProcessors 4 --binSize 3000 --distanceBetweenBins 10000 \
                 --histogram 50_deeptools_summary/insertSize_histogram_all_aa_10ng.pdf \
                 --outRawFragmentLengths 50_deeptools_summary/insertSize_all_aa_10ng.txt
 
