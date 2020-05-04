@@ -5,7 +5,6 @@
 data*
 metrics/
 plots*/
-.*
 work/
 nohup*.out
 downsample*.txt
