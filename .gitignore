@@ -10,6 +10,7 @@ plots*/
 work/
 nohup*.out
 downsample*.txt
+*downsample*.csv
 ref/
 tmp/
 confident_calls/
