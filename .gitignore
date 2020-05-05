@@ -2,6 +2,8 @@
 01_data_qc/QualityControl/
 01_data_qc/sequencing-metrics.csv
 .ipynb_checkpoints
+._*
+.DS*
 data*
 metrics/
 plots*/
