@@ -13,157 +13,84 @@ nextflow.preview.dsl=2
 
 process downsample {
     tag "$sampleName"
-    label "gatk_container"
+    label "picard_container"
 
     input:
-    set sampleName, file(bam), downSampleFactor
+    tuple sampleName, file(bam), downSampleFactor
     
     output:
     tuple sampleName, file("${sampleName}_DS.bam")
     
-    
     script:
     """
-    ${params.javaLocation} -Djava.io.tmpdir='.' -XX:ParallelGCThreads=${task.cpus} -jar ${params.picardLocation} DownsampleSam INPUT=${bam} OUTPUT=${sampleName}_DS.bam METRICS_FILE=${sampleName}.DownSampleSam.txt PROBABILITY=${downSampleFactor}
-
-    ln -s  ${params.refFolder}${params.genomeVersion}/${params.genomeName.replaceAll(/.fn?a$/, "")}/${params.genomeName.replaceAll(/\.fn?a$/, "*")} . 
-    
-    cp .command.log ${sampleName}_DownSampleSam.log
-    cp .command.sh ${sampleName}_DownSampleSam.sh    
+    $params.picardCommand DownsampleSam \
+            INPUT=${bam} OUTPUT=${sampleName}_DS.bam \
+            METRICS_FILE=${sampleName}.DownSampleSam.txt \
+            PROBABILITY=${downSampleFactor}
     """
 }
 
 process markdup {
     tag "$sampleName"
-
+    label "picard_container"
     memory '15 GB'
-    publishDir params.downSampleFolder, mode: 'link', overwrite: true
+    publishDir "${params.workflowBranchId}30_downsample", mode: 'link', overwrite: true
 
     input:
-    set sampleName, file(bam) from bam_for_markdup
+    tuple sampleName, file(bam)
 
     output:
-    set sampleName, file("${sampleName}_DS_MD.bam") into  bam_for_qualimap, bam_for_vc, bam_for_samtools, bam_for_picard, bam_for_indexing, bam_for_cnn_variantscore
-    file "${sampleName}_DS_MD.bam" into count_reads_md
-    file "${sampleName}_*"
+    tuple sampleName, file("${sampleName}_DS_MD.bam")
 
     script:
     """
-    ${params.javaLocation} -Djava.io.tmpdir='.' -XX:ParallelGCThreads=${task.cpus} -jar ${params.picardLocation} MarkDuplicates INPUT=$bam  OUTPUT=${sampleName}_DS_MD.bam METRICS_FILE=${sampleName}_DS.MarkDuplicatesMetrics.txt TAGGING_POLICY=OpticalOnly OPTICAL_DUPLICATE_PIXEL_DISTANCE=2500
-
-    cp .command.log ${sampleName}_MarkDuplicates.log
-    cp .command.sh ${sampleName}_MarkDuplicates.sh    
-    """
-}
-
-process samtools {
-    tag "$sampleName"
-
-    cpus 1
-    memory '1 GB'
-
-    publishDir params.downSampleFolder, mode: 'link', overwrite: true
-
-    input:
-    set sampleName, file(bam) from bam_for_samtools
-
-    output:
-    file "${sampleName}_DS_MD_mapped.bam" into count_reads_st1
-    file "${sampleName}_DS_MD_mapped_multiple.bam" into count_reads_st2
-    file "${sampleName}_DS_MD_mapped_single.bam" into count_reads_st3
-    file "${sampleName}_samtools.*"
-
-
-    script:
-    """
-    samtools view -b -h -F 4 $bam >  ${sampleName}_DS_MD_mapped.bam
-    samtools view -b -h -q 1 ${sampleName}_DS_MD_mapped.bam -U ${sampleName}_DS_MD_mapped_multiple.bam >  ${sampleName}_DS_MD_mapped_single.bam 
-
-    cp .command.log ${sampleName}_samtools.log
-    cp .command.sh ${sampleName}_samtools.sh    
-    """
-}
-
-count_reads = count_reads_md.mix(count_reads_st1, count_reads_st2, count_reads_st3)
-
-process count_reads {
-    cpus 1
-    memory '1 GB'
-
-    publishDir params.downSampleFolder, mode: 'link', overwrite: true
-
-    input:
-    file bam from count_reads
-
-    output:
-    file "${bam}.ReadCount.txt"
-
-    script:
-    """
-    samtools view -c -F 0x900 $bam > ${bam}.ReadCount.txt
+    $params.picardCommand MarkDuplicates \
+            INPUT=$bam OUTPUT=${sampleName}_DS_MD.bam \
+            METRICS_FILE=${sampleName}_DS.MarkDuplicatesMetrics.txt \
+            TAGGING_POLICY=OpticalOnly \
+            OPTICAL_DUPLICATE_PIXEL_DISTANCE=2500
     """
 }
 
 process metrics {
     tag "$sampleName"
-
+    label "picard_container"
     cpus 4
-    
-    publishDir params.downSampleFolder, mode: 'link', overwrite: true
+    publishDir "${params.workflowBranchId}30_downsample", mode: 'link', overwrite: true
 
     input:
-    set sampleName, file(bam) from bam_for_picard
+    path 'genome.fa'
+    tuple sampleName, file(bam)
     
     output:
     file "${sampleName}_*.txt"
     file "${sampleName}_*.pdf"
-    file "${sampleName}_PicardMetrics.*"
     
     script:
     """
-    ln -s  ${params.refFolder}${params.genomeVersion}/${params.genomeName.replaceAll(/.fn?a$/, "")}/${params.genomeName.replaceAll(/\.fn?a$/, "*")} . 
-    
-    ${params.javaLocation} -Djava.io.tmpdir='.' -XX:ParallelGCThreads=${task.cpus} -jar ${params.picardLocation} CollectAlignmentSummaryMetrics REFERENCE_SEQUENCE=${params.genomeName} INPUT=$bam OUTPUT=${sampleName}_DS_MD.AlignmentSummaryMetrics.txt
-    ${params.javaLocation} -Djava.io.tmpdir='.' -XX:ParallelGCThreads=${task.cpus} -jar ${params.picardLocation} CollectWgsMetrics REFERENCE_SEQUENCE=${params.genomeName} INPUT=$bam OUTPUT=${sampleName}_DS_MD.WgsMetrics.txt 
-    ${params.javaLocation} -Djava.io.tmpdir='.' -XX:ParallelGCThreads=${task.cpus} -jar ${params.picardLocation} CollectInsertSizeMetrics INPUT=$bam OUTPUT=${sampleName}_DS_MD.InsertSizeMetrics.txt HISTOGRAM_FILE=${sampleName}_DS_MD.InsertSizeMetrics-Histogram.pdf 
-
-    cp .command.log ${sampleName}_PicardMetrics.log
-    cp .command.sh ${sampleName}_PicardMetrics.sh    
-    """
-}
-
-process qualimap {
-    tag "$sampleName"
-
-    publishDir "${params.downSampleFolder}/qualimap/", mode: 'link', overwrite: true
-    
-    input:
-    set sampleName, file(bam) from bam_for_qualimap
-
-    output:
-    set sampleName, file("${sampleName}_DS") into qm_stats
-    set sampleName, file("${sampleName}_qm.log") into qm_log
-    set sampleName, file("${sampleName}_qm.sh") into qm_sh
-    
-    script:
-    """
-    $params.qualimapLocation bamqc -nt $task.cpus -bam ${bam} -outdir ${sampleName}_DS -outformat PDF:HTML --java-mem-size=15G
-    cp .command.log ${sampleName}_qm.log
-    cp .command.sh ${sampleName}_qm.sh
+    $params.picardCommand CollectAlignmentSummaryMetrics \
+                REFERENCE_SEQUENCE=genome.fa \
+                INPUT=$bam OUTPUT=${sampleName}_DS_MD.AlignmentSummaryMetrics.txt
+    $params.picardCommand CollectWgsMetrics \
+                REFERENCE_SEQUENCE=genome.fa \
+                INPUT=$bam OUTPUT=${sampleName}_DS_MD.WgsMetrics.txt 
+    $params.picardCommand CollectInsertSizeMetrics \
+                INPUT=$bam OUTPUT=${sampleName}_DS_MD.InsertSizeMetrics.txt \
+                HISTOGRAM_FILE=${sampleName}_DS_MD.InsertSizeMetrics-Histogram.pdf
     """
 }
 
 process indexing {
-    publishDir params.downSampleFolder, mode: 'link', overwrite: true
-    
+    publishDir "${params.workflowBranchId}30_downsample", mode: 'link', overwrite: true
+    label 'samtools_container'
     cpus 4
     memory '1 GB'
 
     input:
-    set sampleName, file(bam) from bam_for_indexing
+    tuple sampleName, file(bam)
 
     output:
-    set sampleName, file("${bam}.bai") into bam_index
+    tuple sampleName, file("${bam}.bai")
     
     script:
     """
@@ -173,77 +100,215 @@ process indexing {
 
 process hc {
     tag "$sampleName"
-
+    label 'gatk_container'
     time '7d'
 
-    publishDir "${params.vcfFolder}", mode: 'link', overwrite: true
-    
     input:
-    set sampleName, file(bam), file(bai) from bam_for_vc.join(bam_index) // Join on sample name
+    path 'genome.fa'
+    path 'genome.fa.fai'
+    path 'genome.dict'
+    tuple sampleName, file(bam), file(bai)
 
     output:
-    set sampleName, file("${sampleName}.vcf") into hc_vcfs
-    file "${sampleName}_hc.log"
-    file "${sampleName}_hc.sh"
+    tuple sampleName, file("${sampleName}.vcf")
     
     script:
     """
-    ln -s  ${params.refFolder}${params.genomeVersion}/${params.genomeName.replaceAll(/.fn?a$/, "")}/${params.genomeName.replaceAll(/\.fn?a$/, "*")} . 
-    export JAVA_HOME=/data/common/tools/jdk8/current
-    export PATH=/data/common/tools/jdk8/current/bin:$PATH
-    $params.gatkLocation --java-options "-Xmx4g" HaplotypeCaller \
-                -R $params.genomeName \
+    $params.gatkCommand HaplotypeCaller \
+                -R genome.fa \
                 -I $bam \
                 -O ${sampleName}.vcf
-    cp .command.log ${sampleName}_hc.log
-    cp .command.sh ${sampleName}_hc.sh
     """
 }
 
-//process score {
-//    tag "$sampleName"
-//
-//
-//    publishDir "${params.vcfFolder}", mode: 'link', overwrite: true
-//
-//    input:
-//    set sampleName, file(vcf) from hc_vcfs
-//    file bam_for_cnn_variantscore
-//
-//    output:
-//    set sampleName, file("${sampleName}.scored.vcf}") into scored_vcfs
-//	
-//
-//    script:
-//    """
-//    ln -s ${params.refFolder}${params.genomeVersion}/${params.genomeName.replaceAll(/.fn?a$/, "")}/${params.genomeName.replaceAll(/\.fn?a$/, "*")} . 
-//    $params.gatkLocation CNNScoreVariants \
-//       -I $bam_for_cnn_variantscore \
-//       -V $vcf \
-//       -R $params.genomeName \
-//       -O ${sampleName}.scored.vcf \
-//       -tensor-type read-tensor
-//
-//       #-inference-batch-size 2 \
-//       #-transfer-batch-size 2 \
-//
-//    cp .command.log ${sampleName}_rc.log
-//    cp .command.sh ${sampleName}_rc.sh
-//    """
-//}
+process score {
+    tag "$sampleName"
+    label 'gatk_container'
+    memory '15 GB'
+    time '12d'
 
+    publishDir "${params.workflowBranchId}40_vcf", mode: 'link', overwrite: true
 
+    input:
+    path 'genome.fa'
+    path 'genome.fa.fai'
+    path 'genome.dict'
+    tuple sampleName, file(vcf), file(bam), file(bai)
 
+    output:
+    tuple sampleName, file("${sampleName}.scored.vcf"), file("${sampleName}.scored.vcf.idx")
 
-samples1 = Channel
+    script:
+    """
+    $params.gatkCommand CNNScoreVariants \
+       -I $bam \
+       -V $vcf \
+       -R genome.fa \
+       -O ${sampleName}.scored.vcf \
+       -tensor-type read_tensor
+    """
+}
+
+process happy {
+    tag "$sampleName"
+    label 'happy_container'
+
+    publishDir "${params.workflowBranchId}50_variant_analysis", mode: 'link', overwrite: true
+
+    input:
+    path 'genome.fa'
+    path 'genome.fa.fai'
+    path 'cc.vcf'
+    path 'cc.bed'
+    tuple sampleName, file(vcf), file(vcfi)
+
+    output:
+    file("${sampleName}_happy")
+
+    script:
+    """
+    mkdir ${sampleName}_happy
+    /opt/hap.py/bin/hap.py --threads $task.cpus -r genome.fa -f cc.bed \
+        --roc CNN_2D cc.vcf $vcf -o ${sampleName}_happy/${sampleName}
+    """
+}
+
+process bigwigqx {
+    tag "$sampleName"
+    label 'deeptools_container'
+    cpus 8
+    memory '16 GB'
+
+    publishDir "${params.workflowBranchId}40_bigwig", mode: 'link', overwrite: true
+
+    input:
+    tuple val(qthreshold), sampleName, file(bam), file(bai)
+
+    output:
+    tuple qthreshold, sampleName, file("${sampleName}_mapQ${qthreshold}.bw")
+
+    script:
+    """
+    bamCoverage --binSize 1 -p $task.cpus --minMappingQuality $qthreshold \
+                        -b $bam -o ${sampleName}_mapQ${qthreshold}.bw
+    """
+}
+
+// TODO -- maybe summary file is not needed
+/* process bwsummary {
+    label 'deeptools_container'
+    cpus 8
+    memory '16 GB'
+
+    publishDir "${params.workflowBranchId}50_deeptools_summary", mode: 'link', overwrite: true
+
+    input:
+    tuple sampleName, qthreshold, val(sampleNames), file(bigwigs)
+
+    output:
+    file("summary_${qthreshold}.npz") into bwsummary_out
+
+    script:
+    """
+    multiBigwigSummary bins -p $task.cpus -b $bigwigs -o summary_${qthreshold}.npz
+    """
+} */
+
+process gcbias {
+    tag "$sampleName"
+    label 'deeptools_container'
+    cpus 4
+    memory '15 GB'
+
+    publishDir "${params.workflowBranchId}40_gc_bias", mode: 'link', overwrite: true
+
+    input:
+    path 'genome.2bit'
+    tuple sampleName, file(bam), file(bai)
+
+    output:
+    file("${sampleName}.txt")
+
+    script:
+    """
+    computeGCBias -g genome.2bit --effectiveGenomeSize 2913022398 \
+                            -p $task.cpus -b $bam -o ${sampleName}.txt
+    """
+}
+
+process plotCoverage {
+    label 'deeptools_container'
+    cpus 4
+    memory '15 GB'
+
+    publishDir "${params.workflowBranchId}50_deeptools_summary", mode: 'link', overwrite: true
+
+    input:
+    tuple val(sampleNames), val(conc), file(bam), file(bai)
+
+    output:
+    file("coverage_${conc}*")
+
+    script:
+    """
+    plotCoverage -b $bam --label ${sampleNames.join(' ')} \
+            --plotFile coverage_${conc}_plot.pdf \
+            --outRawCounts coverage_${conc}.txt
+    """
+}
+
+process bamPEFragmentSize {
+    label 'deeptools_container'
+    cpus 4
+    memory '15 GB'
+
+    publishDir "${params.workflowBranchId}50_deeptools_summary", mode: 'link', overwrite: true
+
+    input:
+    tuple val(sampleNames), val(conc), file(bam), file(bai)
+
+    output:
+    file("insertSize_${conc}*")
+
+    script:
+    """
+    bamPEFragmentSize --bamfiles $bam -samplesLabel ${sampleNames.join(' ')} \
+                --numberOfProcessors 4 --binSize 3000 --distanceBetweenBins 10000 \
+                --histogram insertSize_${conc}_plot.pdf \
+                --outRawFragmentLengths insertSize_${conc}.txt
+    """
+}
+
+genome = Channel.value(params.refPath)
+genomeFai = Channel.value("${params.refPath}.fai")
+genomeDict = Channel.value(params.refPath.replaceAll(/\.fn?a$/, '.dict'))
+genome2bit = Channel.value(params.ref2bitPath)
+confidentCallsBed = Channel.value(params.confidentCallsBedPath)
+confidentCallsVcf = Channel.value(params.confidentCallsVcfPath)
+confidentCallsIndexes = confidentCallsBed.concat(confidentCallsVcf).collect { "${it}.tbi"}
+
+qThresholds = Channel.fromList([0, 20])
+
+inputSamples = Channel
     .fromPath('b_downsample_factors.csv')
     .splitCsv(header:true)
     .map{ row -> tuple(row.LIBRARY, file(row.Path), row.Scaling) }
 
-//// 
-
-samples1.set { samples_ch }
+concentrations = inputSamples.map { it[0] }.splitCsv(sep: "-").map { it[1] }
+libraryConc = inputSamples.map { it[0] }.merge(concentrations)
 
 workflow {
-
+    downsample(inputSamples)
+    markdup(downsample.out)
+    metrics(genome, markdup.out)
+    indexing(markdup.out)
+    bamWithIndex = markdup.out.join(indexing.out)
+    hc(genome, genomeFai, genomeDict, bamWithIndex)
+    score(genome, genomeFai, genomeDict, hc.out.join(bamWithIndex))
+    happy(genome, genomeFai, confidentCallsVcf, confidentCallsBed, score.out)
+    bigwigqx(qThresholds.combine(bamWithIndex))
+    //TODO or not TODO: multibwsummaries.groupTuple(by: [0,1], sort: true)
+    bamWithConcAndIndex = libraryConc.join(bamWithIndex)
+    plotCoverage(bamWithConcAndIndex.groupTuple(by: 1))
+    gcbias(genome2bit, bamWithIndex)
 }

@@ -1,4 +1,5 @@
 ?0_*
+b?0_*
 01_data_qc/QualityControl/
 01_data_qc/sequencing-metrics.csv
 .ipynb_checkpoints
@@ -7,7 +8,7 @@
 data*
 metrics/
 plots*/
-.nextflow.log*
+.nextflow*
 work/
 nohup*.out
 downsample*.txt
