@@ -40,7 +40,8 @@ process markdup {
     tuple sampleName, file(bam)
 
     output:
-    tuple sampleName, file("${sampleName}_DS_MD.bam")
+    tuple sampleName, file("${sampleName}_DS_MD.bam"), emit: data
+    file "${sampleName}_DS.MarkDuplicatesMetrics.txt"
 
     script:
     """
@@ -272,7 +273,7 @@ process bamPEFragmentSize {
 
     script:
     """
-    bamPEFragmentSize --bamfiles $bam -samplesLabel ${sampleNames.join(' ')} \
+    bamPEFragmentSize --bamfiles $bam --samplesLabel ${sampleNames.join(' ')} \
                 --numberOfProcessors 4 --binSize 3000 --distanceBetweenBins 10000 \
                 --histogram insertSize_${conc}_plot.pdf \
                 --outRawFragmentLengths insertSize_${conc}.txt
@@ -300,9 +301,9 @@ libraryConc = inputSamples.map { it[0] }.merge(concentrations)
 workflow {
     downsample(inputSamples)
     markdup(downsample.out)
-    metrics(genome, markdup.out)
-    indexing(markdup.out)
-    bamWithIndex = markdup.out.join(indexing.out)
+    metrics(genome, markdup.out.data)
+    indexing(markdup.out.data)
+    bamWithIndex = markdup.out.data.join(indexing.out)
     hc(genome, genomeFai, genomeDict, bamWithIndex)
     score(genome, genomeFai, genomeDict, hc.out.join(bamWithIndex))
     happy(genome, genomeFai, confidentCallsVcf, confidentCallsBed, score.out)
@@ -310,5 +311,6 @@ workflow {
     //TODO or not TODO: multibwsummaries.groupTuple(by: [0,1], sort: true)
     bamWithConcAndIndex = libraryConc.join(bamWithIndex)
     plotCoverage(bamWithConcAndIndex.groupTuple(by: 1))
+    bamPEFragmentSize(bamWithConcAndIndex.groupTuple(by: 1))
     gcbias(genome2bit, bamWithIndex)
 }
