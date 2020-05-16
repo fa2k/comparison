@@ -14,6 +14,7 @@ nextflow.preview.dsl=2
 process downsample {
     tag "$sampleName"
     label "picard_container"
+    cpus 2
 
     input:
     tuple sampleName, file(bam), downSampleFactor
@@ -23,7 +24,8 @@ process downsample {
     
     script:
     """
-    $params.picardCommand DownsampleSam \
+    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga}G" \
+            DownsampleSam \
             INPUT=${bam} OUTPUT=${sampleName}_DS.bam \
             METRICS_FILE=${sampleName}.DownSampleSam.txt \
             PROBABILITY=${downSampleFactor}
@@ -33,7 +35,7 @@ process downsample {
 process markdup {
     tag "$sampleName"
     label "picard_container"
-    memory '15 GB'
+    cpus 2
     publishDir "${params.workflowBranchId}30_downsample", mode: 'link', overwrite: true
 
     input:
@@ -45,7 +47,8 @@ process markdup {
 
     script:
     """
-    $params.picardCommand MarkDuplicates \
+    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory}G" \
+            MarkDuplicates \
             INPUT=$bam OUTPUT=${sampleName}_DS_MD.bam \
             METRICS_FILE=${sampleName}_DS.MarkDuplicatesMetrics.txt \
             TAGGING_POLICY=OpticalOnly \
@@ -56,7 +59,7 @@ process markdup {
 process metrics {
     tag "$sampleName"
     label "picard_container"
-    cpus 4
+    cpus 2
     publishDir "${params.workflowBranchId}30_downsample", mode: 'link', overwrite: true
 
     input:
@@ -69,13 +72,16 @@ process metrics {
     
     script:
     """
-    $params.picardCommand CollectAlignmentSummaryMetrics \
+    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory}G" \
+                CollectAlignmentSummaryMetrics \
                 REFERENCE_SEQUENCE=genome.fa \
                 INPUT=$bam OUTPUT=${sampleName}_DS_MD.AlignmentSummaryMetrics.txt
-    $params.picardCommand CollectWgsMetrics \
+    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory}G" \
+                CollectWgsMetrics \
                 REFERENCE_SEQUENCE=genome.fa \
                 INPUT=$bam OUTPUT=${sampleName}_DS_MD.WgsMetrics.txt 
-    $params.picardCommand CollectInsertSizeMetrics \
+    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory}G" \
+                CollectInsertSizeMetrics \
                 INPUT=$bam OUTPUT=${sampleName}_DS_MD.InsertSizeMetrics.txt \
                 HISTOGRAM_FILE=${sampleName}_DS_MD.InsertSizeMetrics-Histogram.pdf
     """
@@ -84,7 +90,7 @@ process metrics {
 process indexing {
     publishDir "${params.workflowBranchId}30_downsample", mode: 'link', overwrite: true
     label 'samtools_container'
-    cpus 4
+    cpus 1
     memory '1 GB'
 
     input:
@@ -102,6 +108,7 @@ process indexing {
 process hc {
     tag "$sampleName"
     label 'gatk_container'
+    cpus 2
     time '7d'
 
     input:
@@ -115,7 +122,8 @@ process hc {
     
     script:
     """
-    $params.gatkCommand HaplotypeCaller \
+    $params.gatkCommand --java-options="-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory}G" \
+                HaplotypeCaller \
                 -R genome.fa \
                 -I $bam \
                 -O ${sampleName}.vcf
@@ -125,7 +133,6 @@ process hc {
 process score {
     tag "$sampleName"
     label 'gatk_container'
-    memory '15 GB'
     time '12d'
 
     publishDir "${params.workflowBranchId}40_vcf", mode: 'link', overwrite: true
@@ -141,6 +148,7 @@ process score {
 
     script:
     """
+    export OMP_NUM_THREADS=$task.cpus
     $params.gatkCommand CNNScoreVariants \
        -I $bam \
        -V $vcf \
@@ -178,7 +186,6 @@ process bigwigqx {
     tag "$sampleName"
     label 'deeptools_container'
     cpus 8
-    memory '16 GB'
 
     publishDir "${params.workflowBranchId}40_bigwig", mode: 'link', overwrite: true
 
@@ -199,7 +206,6 @@ process bigwigqx {
 /* process bwsummary {
     label 'deeptools_container'
     cpus 8
-    memory '16 GB'
 
     publishDir "${params.workflowBranchId}50_deeptools_summary", mode: 'link', overwrite: true
 
@@ -218,8 +224,6 @@ process bigwigqx {
 process gcbias {
     tag "$sampleName"
     label 'deeptools_container'
-    cpus 4
-    memory '15 GB'
 
     publishDir "${params.workflowBranchId}40_gc_bias", mode: 'link', overwrite: true
 
@@ -260,8 +264,6 @@ process plotCoverage {
 
 process bamPEFragmentSize {
     label 'deeptools_container'
-    cpus 4
-    memory '15 GB'
 
     publishDir "${params.workflowBranchId}50_deeptools_summary", mode: 'link', overwrite: true
 
@@ -291,7 +293,7 @@ confidentCallsIndexes = confidentCallsBed.concat(confidentCallsVcf).collect { "$
 qThresholds = Channel.fromList([0, 20])
 
 inputSamples = Channel
-    .fromPath('b_downsample_factors.csv')
+    .fromPath("${params.workflowBranchId}_downsample_factors.csv")
     .splitCsv(header:true)
     .map{ row -> tuple(row.LIBRARY, file(row.Path), row.Scaling) }
 
