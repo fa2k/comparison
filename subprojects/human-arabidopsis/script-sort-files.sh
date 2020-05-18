@@ -1,5 +1,7 @@
 #!/bin/sh
 
+mkdir -p data tmp
+
 SAMPLE=NEB-100ng-1
 
 singularity run -B ../../20_piccard/$SAMPLE.bam:/input.bam \
@@ -8,6 +10,7 @@ singularity run -B ../../20_piccard/$SAMPLE.bam:/input.bam \
                 I=/input.bam \
                 O=/data/$SAMPLE-human-qsort.bam \
                 SO=queryname \
+                TMP_DIR=tmp/ \
                 CREATE_INDEX=true
 
 
@@ -17,4 +20,5 @@ singularity run -B ../../arabidopsis/20_piccard/$SAMPLE.bam:/input.bam \
                 I=/input.bam \
                 O=/data/$SAMPLE-arabidopsis-qsort.bam \
                 SO=queryname \
+                TMP_DIR=tmp/ \
                 CREATE_INDEX=true
