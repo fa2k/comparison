@@ -47,7 +47,7 @@ process markdup {
 
     script:
     """
-    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory}G" \
+    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga}G" \
             MarkDuplicates \
             INPUT=$bam OUTPUT=${sampleName}_DS_MD.bam \
             METRICS_FILE=${sampleName}_DS.MarkDuplicatesMetrics.txt \
@@ -72,15 +72,15 @@ process metrics {
     
     script:
     """
-    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory}G" \
+    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga}G" \
                 CollectAlignmentSummaryMetrics \
                 REFERENCE_SEQUENCE=genome.fa \
                 INPUT=$bam OUTPUT=${sampleName}_DS_MD.AlignmentSummaryMetrics.txt
-    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory}G" \
+    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga}G" \
                 CollectWgsMetrics \
                 REFERENCE_SEQUENCE=genome.fa \
                 INPUT=$bam OUTPUT=${sampleName}_DS_MD.WgsMetrics.txt 
-    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory}G" \
+    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga}G" \
                 CollectInsertSizeMetrics \
                 INPUT=$bam OUTPUT=${sampleName}_DS_MD.InsertSizeMetrics.txt \
                 HISTOGRAM_FILE=${sampleName}_DS_MD.InsertSizeMetrics-Histogram.pdf
@@ -122,7 +122,7 @@ process hc {
     
     script:
     """
-    $params.gatkCommand --java-options="-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory}G" \
+    $params.gatkCommand --java-options "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga}G" \
                 HaplotypeCaller \
                 -R genome.fa \
                 -I $bam \
@@ -149,7 +149,7 @@ process score {
     script:
     """
     export OMP_NUM_THREADS=$task.cpus
-    $params.gatkCommand CNNScoreVariants \
+    $params.gatkCommand --java-options "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga}G" CNNScoreVariants \
        -I $bam \
        -V $vcf \
        -R genome.fa \
