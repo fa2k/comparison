@@ -15,6 +15,7 @@ process downsample {
     tag "$sampleName"
     label "picard_container"
     cpus 2
+    memory '4 GB'
 
     input:
     tuple sampleName, file(bam), downSampleFactor
@@ -24,7 +25,7 @@ process downsample {
     
     script:
     """
-    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga}G" \
+    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga-2}G" \
             DownsampleSam \
             INPUT=${bam} OUTPUT=${sampleName}_DS.bam \
             METRICS_FILE=${sampleName}.DownSampleSam.txt \
@@ -47,7 +48,7 @@ process markdup {
 
     script:
     """
-    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga}G" \
+    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga-2}G" \
             MarkDuplicates \
             INPUT=$bam OUTPUT=${sampleName}_DS_MD.bam \
             METRICS_FILE=${sampleName}_DS.MarkDuplicatesMetrics.txt \
@@ -60,6 +61,7 @@ process metrics {
     tag "$sampleName"
     label "picard_container"
     cpus 2
+    memory '12 GB'
     publishDir "${params.workflowBranchId}30_downsample", mode: 'link', overwrite: true
 
     input:
@@ -72,15 +74,15 @@ process metrics {
     
     script:
     """
-    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga}G" \
+    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga-2}G" \
                 CollectAlignmentSummaryMetrics \
                 REFERENCE_SEQUENCE=genome.fa \
                 INPUT=$bam OUTPUT=${sampleName}_DS_MD.AlignmentSummaryMetrics.txt
-    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga}G" \
+    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga-2}G" \
                 CollectWgsMetrics \
                 REFERENCE_SEQUENCE=genome.fa \
                 INPUT=$bam OUTPUT=${sampleName}_DS_MD.WgsMetrics.txt 
-    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga}G" \
+    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga-2}G" \
                 CollectInsertSizeMetrics \
                 INPUT=$bam OUTPUT=${sampleName}_DS_MD.InsertSizeMetrics.txt \
                 HISTOGRAM_FILE=${sampleName}_DS_MD.InsertSizeMetrics-Histogram.pdf
@@ -122,7 +124,7 @@ process hc {
     
     script:
     """
-    $params.gatkCommand --java-options "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga}G" \
+    $params.gatkCommand --java-options "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga-2}G" \
                 HaplotypeCaller \
                 -R genome.fa \
                 -I $bam \
@@ -149,7 +151,7 @@ process score {
     script:
     """
     export OMP_NUM_THREADS=$task.cpus
-    $params.gatkCommand --java-options "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga}G" CNNScoreVariants \
+    $params.gatkCommand --java-options "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga-2}G" CNNScoreVariants \
        -I $bam \
        -V $vcf \
        -R genome.fa \
