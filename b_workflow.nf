@@ -1,15 +1,43 @@
 //// NOTE: Uses nextflow second version language.
 nextflow.preview.dsl=2
 
-//// Workflow "b" -- downsample based on coverage.
-//// Contrary to the other workflow, this one performs all of the analysis in a single
-//// Nextflow file.
+//// Alternative workflow branches, for different downsampling factors.
+
+/// This is currently the actively used workflow.
 
 // Usage information:
 // Inputs are BAM files from 20_piccard.
-// The file b_downsample_factors.csv should contain a list of samples, paths and downsampling factors.
-// The CSV file can be generated using the notebook b30_coverage_downsampling_factors.ipynb
+// Speciy the parameter workflowBranchId as a, b, c or d. This selects an input file called
+// ${workflowBranchId}_downsample_factors.csv as input.
+// The file x_downsample_factors.csv should contain a list of samples, paths and downsampling factors.
 
+// The CSV files can be generated using the notebook b30_coverage_downsampling_factors.ipynb
+
+// Deduplication mode: currently enabled for workflow branch d
+params.enableDedup = (params.workflowBranchId == "d")
+
+
+process deduplicate {
+    tag "$sampleName"
+    label "picard_container"
+    cpus 2
+    publishDir "${params.workflowBranchId}30_downsample", mode: 'link', overwrite: true
+
+    input:
+    tuple sampleName, file(bam), val(downSampleFactor)
+
+    output:
+    tuple sampleName, file("${sampleName}_dd.bam"), val(downSampleFactor)
+
+    script:
+    """
+    $params.picardCommand -j "-XX:ParallelGCThreads=$task.cpus -Xmx${task.memory.giga-2}G" \
+            MarkDuplicates \
+            INPUT=$bam OUTPUT=${sampleName}_dd.bam \
+            METRICS_FILE=dummy.txt \
+            REMOVE_DUPLICATES=true
+            """
+}
 
 process downsample {
     tag "$sampleName"
@@ -110,7 +138,7 @@ process indexing {
 process hc {
     tag "$sampleName"
     label 'gatk_container'
-    cpus 2
+    cpus 3
     time '7d'
 
     input:
@@ -136,6 +164,7 @@ process score {
     tag "$sampleName"
     label 'gatk_container'
     time '12d'
+    cpus 24
 
     publishDir "${params.workflowBranchId}40_vcf", mode: 'link', overwrite: true
 
@@ -303,11 +332,21 @@ concentrations = inputSamples.map { it[0] }.splitCsv(sep: "-").map { it[1] }
 libraryConc = inputSamples.map { it[0] }.merge(concentrations)
 
 workflow {
-    downsample(inputSamples)
-    markdup(downsample.out)
-    metrics(genome, markdup.out.data)
-    indexing(markdup.out.data)
-    bamWithIndex = markdup.out.data.join(indexing.out)
+    if (params.enableDedup) {
+        // d workflow branch: deduplicate data before downsampling
+        deduplicate(inputSamples)
+        downsample(deduplicate.out)
+        bam_data = downsample.out
+    }
+    else {
+        // other workflow branches: downsample, then mark duplicates
+        downsample(inputSamples)
+        markdup(downsample.out)
+        bam_data = markdup.out.data
+    }
+    metrics(genome, bam_data)
+    indexing(bam_data)
+    bamWithIndex = bam_data.join(indexing.out)
     hc(genome, genomeFai, genomeDict, bamWithIndex)
     score(genome, genomeFai, genomeDict, hc.out.join(bamWithIndex))
     happy(genome, genomeFai, confidentCallsVcf, confidentCallsBed, score.out)
