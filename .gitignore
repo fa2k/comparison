@@ -11,7 +11,7 @@ plots*/
 result-tables/
 .nextflow*
 nextflow
-work
+work*/
 container-images
 nohup*.out
 downsample*.txt
