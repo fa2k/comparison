@@ -1,1 +1,1 @@
-tar vcfJ /Volumes/3/metrics.tar.xz *_*/*.txt */*qualimap*/ *_*/*.pdf *.ipynb *.txt arabidopsis/*_*/*.txt 
+tar vcfJ metrics.tar.xz {,a,b,c,d}??_*/*.txt */*qualimap*/ *_*/*.pdf arabidopsis/*_*/*.txt 
