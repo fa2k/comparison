@@ -295,6 +295,7 @@ process plotCoverage {
 
 process bamPEFragmentSize {
     label 'deeptools_container'
+    time '4d'
 
     publishDir "${params.workflowBranchId}50_deeptools_summary", mode: 'link', overwrite: true
 
