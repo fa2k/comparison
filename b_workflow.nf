@@ -293,6 +293,28 @@ process plotCoverage {
     """
 }
 
+process plotCoverageHQ {
+    label 'deeptools_container'
+    cpus 4
+    memory '15 GB'
+
+    publishDir "${params.workflowBranchId}50_deeptools_summary", mode: 'link', overwrite: true
+
+    input:
+    tuple val(sampleNames), val(conc), file(bam), file(bai)
+
+    output:
+    file("coverage-hq_${conc}*")
+
+    script:
+    """
+    plotCoverage -b $bam --label ${sampleNames.join(' ')} \
+            --ignoreDuplicates  --minMappingQuality 20 \
+            --plotFile coverage-hq_${conc}_plot.pdf \
+            --outRawCounts coverage-hq_${conc}.txt
+    """
+}
+
 process bamPEFragmentSize {
     label 'deeptools_container'
     time '4d'
@@ -355,6 +377,7 @@ workflow {
     //TODO or not TODO: multibwsummaries.groupTuple(by: [0,1], sort: true)
     bamWithConcAndIndex = libraryConc.join(bamWithIndex)
     plotCoverage(bamWithConcAndIndex.groupTuple(by: 1))
+    plotCoverageHQ(bamWithConcAndIndex.groupTuple(by: 1))
     bamPEFragmentSize(bamWithConcAndIndex.groupTuple(by: 1))
     gcbias(genome2bit, bamWithIndex)
 }
