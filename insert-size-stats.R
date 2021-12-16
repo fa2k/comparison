@@ -117,7 +117,7 @@ ggplot(vc_ins.d, aes(x=MEAN_INSERT_SIZE, y=F1_score, colour=Kit, shape=Conc)) +
 
 # *** Mean coverage significant differences ***
 
-get.get.comparisons.cov <- function(concs) {
+get.get.comparisons.cov <- function(concs, get.n=1) {
   get.comparisons.cov <- function(group.1, key) {
     pvalues <- grouped %>% 
       filter(Kit != key$Kit && Conc == concs) %>% 
@@ -129,13 +129,24 @@ get.get.comparisons.cov <- function(concs) {
                     equal.var=FALSE)$p.value
         )
       )
-    ungroup(pvalues) %>% slice_max(p.value, n=1) %>% select(p.value, Other)
+    ungroup(pvalues) %>% slice_max(p.value, n=get.n) %>% select(p.value, Other)
   }
 }
-crossp <- grouped %>% filter(Conc=='10ng') %>% group_modify(get.get.comparisons.cov('10ng'))
-print(crossp)
-crossp <- grouped %>% filter(Conc=='100ng') %>% group_modify(get.get.comparisons.cov('100ng'))
-print(crossp)
+crossp.1 <- grouped %>% filter(Conc=='10ng') %>% group_modify(get.get.comparisons.cov('10ng'))
+print(crossp.1)
+crossp.2 <- grouped %>% filter(Conc=='100ng') %>% group_modify(get.get.comparisons.cov('100ng'))
+print(crossp.2)
+# This is an overestimate of the p-value at 10 ng because it gives the lowest one 
+# between Swift and Nextera! We should pick one with Nextera vs others and swift vs
+# others.
+print(grouped %>% filter(Conc=='10ng'& Kit=='Swift2S') %>%
+        group_modify(get.get.comparisons.cov('10ng', 2)))
+
+print(grouped %>% filter(Conc=='10ng'& Kit=='Nextera') %>%
+        group_modify(get.get.comparisons.cov('10ng', 2)))
+
+
+
 t.test(df %>% filter(Conc=='100ng' & Kit=='Nextera') %>% select(MEAN_COVERAGE), 
        df %>% filter(Conc=='100ng' & Kit!='Nextera') %>% select(MEAN_COVERAGE), equal.var=FALSE)
 
